@@ -1,11 +1,18 @@
-import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import UserInfo from "./UserInfo/UserInfo";
+//import "./UserInfo/Info.css";
+import MyPage from "./Mypage";
 
 function App() {
   return (
-    <div className="App">
-      <h1>자 이제 시작이야 내꿈을 내꿈을 위한 여행 피카츄!</h1>
-    </div>
+    <>
+      <Router>
+        <Route path="/myPage" component={Mypage}></Route>
+        <Switch>
+          <Route path="/userInfo" component={UserInfo}></Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
