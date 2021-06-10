@@ -9,12 +9,14 @@ import './Main.css'
 
 function Main() {
     return (
+
         <div className="main">
             <Banner />
                 <Section />
                 <Section2 />
                 <Section3 />
             <Footer />
+      
         </div>
     )
 }
