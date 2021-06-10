@@ -1,0 +1,116 @@
+.banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../img/MainBack.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner__center{
+    display: flex;
+    padding-top: 13rem;
+    align-items: center;
+    width: 65%;
+    padding-left: 35px;
+    justify-content: space-between;
+}
+
+.banner__title {
+    color: white;
+}
+
+.banner__title > h1 {
+    font-size: 60px;
+}
+
+.banner__content{
+    color: white
+}
+
+.banner__img {
+    height: 25rem;
+    width: 25rem;
+}
+
+.banner__Search{
+    color: white;
+    padding-top: 100px;
+    border: 100px;
+}
+
+.banner_SearchBtn{
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    height: 40px;
+    width: 200px;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+    border-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.banner_SearchBtn:hover{
+    color: white;
+    background-color: #9725a9;
+    border-color: #9725a9;
+    transition: all 0.2s;
+}
+
+.banner__ranking{
+    display: flex;
+    width: 55%;
+    height: 15rem;
+    background-color: white;
+    justify-content: space-between;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.banner__rankInfo{
+    width: 15vw;
+    text-align: center;
+}
+
+.banner__rankInfo > h2{
+    color: #370047;
+}
+
+.banner__rankInfo > p{
+    color: #aaaaaa;
+    font-size: 15px;
+}
+
+.banner__rank{
+    width: 15vw;
+}
+
+.banner__rank > img{
+    width: 30px;
+}
+
+.banner__userImg {
+    width: 90px;
+    height: 60px;
+    margin: auto;
+}
+
+.banner__userInfo{
+    margin-top: 15px;
+    color: #1dbdfb;
+}
+
+.banner--fadeBottom{
+    height: 7.5rem;
+    width: 100%;
+    background-image: white;
+}
+
