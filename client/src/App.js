@@ -1,18 +1,14 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import UserInfo from "./UserInfo";
-//import "./UserInfo/Info.css";
-import MyPage from "./Mypage";
+import React from 'react';
+import './App.css';
+import Header from './components/Main/Header';
+import Main from './pages/Main'
 
 function App() {
   return (
-    <>
-      <Router>
-        <Route path="/myPage" component={Mypage}></Route>
-        <Switch>
-          <Route path="/userInfo" component={UserInfo}></Route>
-        </Switch>
-      </Router>
-    </>
+    <div className="App">
+        <Header />
+        <Main />
+    </div>
   );
 }
 
