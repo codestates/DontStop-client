@@ -1,5 +1,5 @@
 import React from "react";
-import UserInfo from "./UserInfo/UserInfo";
+import UserInfo from "./UserInfo";
 
 function MyPage({ location, history }) {
   console.log(history);

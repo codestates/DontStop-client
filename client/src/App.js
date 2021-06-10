@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import UserInfo from "./UserInfo/UserInfo";
+import UserInfo from "./UserInfo";
 //import "./UserInfo/Info.css";
 import MyPage from "./Mypage";
 
