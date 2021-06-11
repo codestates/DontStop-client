@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 axios.defaults.withCredentials = true;
@@ -37,12 +37,12 @@ const UserInfo = (props) => {
   //   };
 
   // 일단 정보를 서버로부터 받아서 띄워주기
-  let userInfo = axios
-    .get("http://18.217.112.87:4000/users/info")
-    .then((res) => {
-      console.log("유저: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
-      return res;
-    });
+  // let userInfo = axios
+  //   .get("http://18.217.112.87:4000/users/info")
+  //   .then((res) => {
+  //     console.log("유저: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+  //     return res;
+  //   });
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -71,9 +71,9 @@ const UserInfo = (props) => {
       //   axios.post("http://18.217.112.87:4000/users/info", {
       //     password: props.handlePassword(),
       //   });
-      history.push("/myPage");
+      props.state.history.push("/myPage");
     } else {
-      history.push("/myPage");
+      props.state.history.push("/myPage");
     }
   };
 
@@ -81,42 +81,60 @@ const UserInfo = (props) => {
   // public에 저장 시 경로 이용
 
   return (
-    <div id="wrap">
-      <header>
-        <span className="backToMyPage">마이페이지</span>
-        <span className="logout">로그아웃</span>
-        <img className="banner" src="/img/Logo.png"></img>
-      </header>
+    <div>
+      {/* <div id="wrap">
+        <header>
+          <span className="backToMyPage">마이페이지</span>
+          <span className="logout">로그아웃</span>
+          <img className="banner" src="/img/Logo.png" alt=""></img>
+        </header> */}
 
-      <div id="container">
-        <div className="information">회원정보</div>
-        <form onSubmit={handleClickSave}>
-          <label className="groupName">
-            그룹 이름
-            <input type="text" value="{props.userInfo.groupName}"></input>
-          </label>
-          <label className="userName">
-            이름
-            <input type="text" value="{props.userInfo.name}"></input>
-          </label>
-          <label className="email">
-            이메일
-            <input type="text" value="{props.userInfo.email}"></input>
-          </label>
-          <label className="password">
-            비밀번호
-            <input type="password" onChange={handlePassword}></input>
-          </label>
-          <label className="checkPassword">
-            비밀번호 확인
-            <input type="password" onChange={handleValidatePassword}></input>
-          </label>
-          <button className="save" type="submit" onChange={handleClickSave}>
-            저장하기
-          </button>
-        </form>
-      </div>
-      <footer>Don't stop!!!! /*로고 이미지 넣고 팀원 이름 나열하기*/</footer>
+      <form onSubmit={handleClickSave}>
+        <label className="information">회원정보</label>
+        <label>
+          그룹 이름
+          <input
+            className="groupName"
+            type="text"
+            value="{props.userInfo.groupName}"
+          ></input>
+        </label>
+        <label>
+          이름
+          <input
+            className="userName"
+            type="text"
+            value="{props.userInfo.name}"
+          ></input>
+        </label>
+        <label>
+          이메일
+          <input
+            className="email"
+            type="text"
+            value="{props.userInfo.email}"
+          ></input>
+        </label>
+        <label>
+          비밀번호
+          <input
+            className="password"
+            type="password"
+            onChange={handlePassword}
+          ></input>
+        </label>
+        <label>
+          비밀번호 확인
+          <input
+            className="checkPassword"
+            type="password"
+            onChange={handleValidatePassword}
+          ></input>
+        </label>
+        <button className="save" type="submit" onChange={handleClickSave}>
+          저장하기
+        </button>
+      </form>
     </div>
   );
 };
