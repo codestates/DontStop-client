@@ -1,15 +1,22 @@
 import React from "react";
-import UserInfo from "./UserInfo";
 
-function MyPage({ location, history }) {
-  console.log(history);
-  console.log(location);
+const MyPage = (props) => {
   return (
-    <>
-      <UserInfo></UserInfo>
-      <div className="테스트">테스트 마이페이지</div>
-    </>
+    <div>
+      <header>
+        <span className="userInfo">회원정보</span>
+        <span className="logout">로그아웃</span>
+      </header>
+      <div className="banner">
+        <img src="../img/Logo.png" alt=""></img>
+        <button className="go">그룹일지</button>
+      </div>
+      <div className="name">명언이 나을까 이름이 나을까?</div>
+      <div id="timer">
+        <div className="this_week"></div>
+      </div>
+    </div>
   );
-}
+};
 
 export default MyPage;

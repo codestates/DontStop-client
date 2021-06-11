@@ -6,7 +6,8 @@ import Section3 from '../components/Main/Section3'
 import Footer from '../components/Main/Footer'
 import Header from '../components/Main/Header'
 
-import './Main.css'
+
+import "./Main.css";
 
 function Main() {
     return (
@@ -14,13 +15,13 @@ function Main() {
         <Header />
         <div className="main">
             <Banner />
-                <Section />
-                <Section2 />
-                <Section3 />
+            <Section />
+            <Section2 />
+            <Section3 />
             <Footer />
             </div>
         </>
     )
 }
 
-export default Main
+export default Main;
