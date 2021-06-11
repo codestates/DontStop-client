@@ -5,7 +5,7 @@ import StudySearch from './pages/StudySearch';
 function App() {
   return (
     <>
-        <StudySearch />
+        <Main />
     </>
   );
 }
