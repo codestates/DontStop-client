@@ -9,7 +9,7 @@ function Banner() {
                         <h1>Don't Stop!</h1>
                         <div className='banner__content'>
                         <h5>To follow, without halt, one aim: 
-                        <br/>There's the secret of success.</h5>
+                        There's the secret of success.</h5>
                         </div>
                     <div className='banner__Search'>
                         <button className='banner_SearchBtn'>스터디 찾기</button>
