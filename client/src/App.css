@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     background-size: cover;
-    background-image: url('../src/img/MainBack.png');
+    background-image: url('../src/img/background.png');
 }
 
 .Signinwrap,
