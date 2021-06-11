@@ -1,16 +1,12 @@
-
-
 import React from 'react';
-import './App.css';
-import Header from './components/Main/Header';
-import Main from './pages/Main'
+import Main from './pages/Main';
+import StudySearch from './pages/StudySearch';
 
 function App() {
   return (
-    <div className="App">
-        <Header />
-        <Main />
-    </div>
+    <>
+        <StudySearch />
+    </>
   );
 }
 

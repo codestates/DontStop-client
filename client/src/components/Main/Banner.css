@@ -27,7 +27,8 @@
 }
 
 .banner__content{
-    color: white
+    color: white;
+    white-space: normal;
 }
 
 .banner__img {
