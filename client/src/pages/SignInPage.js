@@ -1,17 +1,24 @@
 import React from "react";
 import SignIn from "./SignIn";
+import Header from "../components/Main/Header";
+import Footer from "../components/Main/Footer";
 
 const SignInPage = () => {
-    return <SignIn></SignIn>;
+    return (
+        <>
+            <Header />
+            <SignIn />
+            <Footer />
+        </>
+    );
 };
 
 export default SignInPage;
 
-// **********App.js**********
+// // **********App.js**********
 // import React, { Component } from "react";
-// import "./App.css";
-// import SignIn from "./pages/SignIn";
-// import SignUp from "./pages/SignUp";
+// import SignInPage from "./pages/SignInPage";
+// import SignUpPage from "./pages/SignUpPage";
 // import Main from "./pages/Main";
 
 // class App extends Component {
@@ -25,8 +32,14 @@ export default SignInPage;
 //         this.issueAccessToken = this.issueAccessToken.bind(this);
 //     }
 
+//     // loginHandler(data) {
+//     //     this.setState({ isLogin: true, accessToken: data });
+//     // }
+
+//     // ****Token-reference****
 //     loginHandler(data) {
-//         this.setState({ isLogin: true, accessToken: data });
+//         this.setState({ isLogin: true });
+//         this.issueAccessToken(data.data.accessToken);
 //     }
 
 //     issueAccessToken(token) {
@@ -43,7 +56,7 @@ export default SignInPage;
 //                         issueAccessToken={this.issueAccessToken}
 //                     />
 //                 ) : (
-//                     <SignUp loginHandler={this.loginHandler} />
+//                     <SignInPage loginHandler={this.loginHandler} />
 //                 )}
 //             </div>
 //         );

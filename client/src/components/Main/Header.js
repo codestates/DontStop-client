@@ -1,22 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 function Header() {
     return (
         <Container>
-                <Logo>
-                    <img src='img/Logo.png' 
-                    alt="" />
-                </Logo>
-                <RightMenu>
-                    <p>로그인</p>
-                    <p>회원가입</p>
-                </RightMenu>
+            <Logo>
+                <img src="img/Logo.png" alt="" />
+            </Logo>
+            <RightMenu>
+                <p>로그인</p>
+                <p>회원가입</p>
+            </RightMenu>
         </Container>
-    )
+    );
 }
 
-export default Header
+export default Header;
 
 const Container = styled.div`
     min-height: 60px;
@@ -29,12 +28,12 @@ const Container = styled.div`
     left: 0;
     right: 0;
     z-index: 1;
-`
+`;
 
 const Logo = styled.div`
     display: flex;
     align-items: center;
-    
+
     img {
         margin-top: 30px;
         height: 100px;
@@ -42,13 +41,13 @@ const Logo = styled.div`
         flex-wrap: nowrap;
         cursor: pointer;
     }
-`
+`;
 
 const RightMenu = styled.div`
     display: flex;
     align-items: center;
 
-    p{
+    p {
         margin-right: 10px;
         font-weight: 600;
         flex-wrap: nowrap;
@@ -56,4 +55,4 @@ const RightMenu = styled.div`
         cursor: pointer;
         border-bottom: 1px solid white;
     }
-`
+`;
