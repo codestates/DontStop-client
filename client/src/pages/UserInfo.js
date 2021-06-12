@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+//import "./pages/UserInfo.css";
 import axios from "axios";
-
 axios.defaults.withCredentials = true;
 
 const UserInfo = (props) => {
@@ -38,19 +38,19 @@ const UserInfo = (props) => {
 
   // 일단 정보를 서버로부터 받아서 띄워주기
   let userInfo = axios.get("http://localhost:4000/users/info").then((res) => {
-    console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+    //  console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
     return res;
   });
 
   const handlePassword = (e) => {
-    console.log("타겟: ", e.target);
-    console.log("타겟벨류", e.target.value);
+    //  console.log("타겟: ", e.target);
+    //  console.log("타겟벨류", e.target.value);
     setPassword(e.target.value);
   };
 
   const handleValidatePassword = (e) => {
-    console.log("타겟1: ", e.target);
-    console.log("타겟벨류1", e.target.value);
+    //  console.log("타겟1: ", e.target);
+    //  console.log("타겟벨류1", e.target.value);
     setValidatePassword(e.target.value);
   };
 
@@ -148,6 +148,7 @@ const UserInfo = (props) => {
             value={validatePassword}
           ></input>
         </label>
+
         <button className="save" type="submit">
           저장하기
         </button>
