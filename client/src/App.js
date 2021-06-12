@@ -1,12 +1,18 @@
 
+
+
+
+
 import React from "react";
 import { Route } from "react-router-dom";
 import Main from "./pages/Main";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
+
 import StudySearch from "./pages/StudySearch";
 import UserInfo from "./pages/UserInfo";
 import Grouppage from "./pages/Grouppage";
+
 
 const App = () => {
     return (
@@ -21,4 +27,6 @@ const App = () => {
     );
 };
 
+
 export default App;
+
