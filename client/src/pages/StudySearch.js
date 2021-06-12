@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import StudyHeader from "../components/StudySearch/StudyHeader";
 import Post from "../components/StudySearch/Post";
@@ -38,6 +39,7 @@ function StudySearch() {
       <Footer />
     </>
   );
+
 }
 
 export default StudySearch;
