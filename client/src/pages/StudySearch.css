@@ -1,7 +1,24 @@
 .studySearch {
-    display: grid;
-    row-gap: 5vw;
-    margin: 15rem 0 10rem 0;
-    grid-template-columns: repeat(3, 14vw);
-    justify-content: space-evenly;
+
+  height: 100%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin: 9rem 15rem 10rem 15rem;
+  justify-content: space-between;
+  scroll-snap-type: x mandatory;
 }
+
+/* .studySearch::-webkit-scrollbar{
+	display: none;
+} */
+
+/* .studySearch::-webkit-scrollbar
+{
+	background-color: #f0e5fd;
+}
+
+.studySearch::-webkit-scrollbar-thumb
+{
+	background-color: #d8b6ff;	
+} */
