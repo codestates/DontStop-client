@@ -37,18 +37,20 @@ const UserInfo = (props) => {
   //   };
 
   // 일단 정보를 서버로부터 받아서 띄워주기
-  // let userInfo = axios
-  //   .get("http://18.217.112.87:4000/users/info")
-  //   .then((res) => {
-  //     console.log("유저: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
-  //     return res;
-  //   });
+  let userInfo = axios.get("http://localhost:4000/users/info").then((res) => {
+    console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+    return res;
+  });
 
   const handlePassword = (e) => {
+    console.log("타겟: ", e.target);
+    console.log("타겟벨류", e.target.value);
     setPassword(e.target.value);
   };
 
   const handleValidatePassword = (e) => {
+    console.log("타겟1: ", e.target);
+    console.log("타겟벨류1", e.target.value);
     setValidatePassword(e.target.value);
   };
 
@@ -68,13 +70,23 @@ const UserInfo = (props) => {
       password === validatePassword
     ) {
       alert("비밀번호가 성공적으로 변경되었습니다.");
-      //   axios.post("http://18.217.112.87:4000/users/info", {
-      //     password: props.handlePassword(),
-      //   });
-      props.state.history.push("/myPage");
-    } else {
-      props.state.history.push("/myPage");
-    }
+      axios.post(
+        "http://localhost:4000/users/info",
+        {
+          password: password,
+        },
+        {
+          headers: {
+            "content-type": "application/json",
+            withCredentials: true,
+          },
+        }
+      );
+
+      // props.state.history.push("/myPage");
+    } //else {
+    //  props.state.history.push("/myPage");
+    // }
   };
 
   // src 에 저장시에는 import를 이용해야 함
@@ -97,6 +109,7 @@ const UserInfo = (props) => {
             className="groupName"
             type="text"
             value="{props.userInfo.groupName}"
+            readOnly
           ></input>
         </label>
         <label>
@@ -105,6 +118,7 @@ const UserInfo = (props) => {
             className="userName"
             type="text"
             value="{props.userInfo.name}"
+            readOnly
           ></input>
         </label>
         <label>
@@ -113,6 +127,7 @@ const UserInfo = (props) => {
             className="email"
             type="text"
             value="{props.userInfo.email}"
+            readOnly
           ></input>
         </label>
         <label>
@@ -121,6 +136,7 @@ const UserInfo = (props) => {
             className="password"
             type="password"
             onChange={handlePassword}
+            value={password}
           ></input>
         </label>
         <label>
@@ -129,9 +145,10 @@ const UserInfo = (props) => {
             className="checkPassword"
             type="password"
             onChange={handleValidatePassword}
+            value={validatePassword}
           ></input>
         </label>
-        <button className="save" type="submit" onChange={handleClickSave}>
+        <button className="save" type="submit">
           저장하기
         </button>
       </form>
