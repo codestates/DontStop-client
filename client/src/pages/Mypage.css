@@ -17,14 +17,10 @@
 div {
   width: 100%;
   height: 100vh;
-
   position: absolute;
   display: block;
-
-  /* background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../img/background.png"); */
 }
+
 header {
   display: flex;
   position: relative;
