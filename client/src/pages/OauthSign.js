@@ -2,6 +2,7 @@ import React from "react";
 import GoogleLogin from "react-google-login";
 
 const clientId = "488469877588-tr5ojh6ki3kl29g2q3pjj7lqtru04caa";
+// -> .env파일 만들어서옮기기
 
 export default function OauthSign({ onSocial }) {
     const onSuccess = async (response) => {

@@ -1,55 +1,90 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import "./SignUp.css";
 
 class SignUp extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.setState = {
             email: "",
             password: "",
-            name: ""
-        }
+            name: "",
+        };
     }
-    
+
     render() {
         return (
-            <div className='Main'>
-                <div className='Signupwarp'>
-                    <div className='OauthsignupBtnwrap'>
-                        <button className='OauthsignupBtn' ><img src='img/googleLogo.png' alt='logo' className='google'/>Google</button>
+            <div className="Main">
+                <div className="Signupwarp">
+                    <div className="OauthsignupBtnwrap">
+                        <button className="OauthsignupBtn">
+                            <img
+                                src="img/googleLogo.png"
+                                alt="logo"
+                                className="google"
+                            />
+                            Google
+                        </button>
                     </div>
-                    <div className='inputField'>
+                    <div className="oneline">
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 50,
+                                marginRight: 10,
+                            }}
+                        />
+                        or
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 50,
+                                marginLeft: 10,
+                            }}
+                        />
+                    </div>
+                    <div className="inputField">
                         {/* <div className='col-25'>이메일</div> */}
-                        <input name='emailSignup'
-                        type='email'
-                        className='col-75'
-                        placeholder='Email'/>
-                    </div>
-                    <div className='inputField'>
-                        {/* <div className='col-25'>비밀번호</div> */}
-                        <input name='password'
-                        type='password'
-                        className='col-75'
-                        minlength='8'
-                        maxLength='16'
-                        placeholder='Password'/>
-                    </div>
-                    <div className='inputField'>
-                        {/* <div className='col-25'>이름</div> */}
-                        <input name='name'
-                        type='text'
-                        className='col-75'
-                        placeholder='Username'/>
-                    </div>
-                    <div className='SignupBtnwrap'>
                         <input
-                        type='submit'
-                        className='SignupBtn' 
-                        value='가입하기'/>
+                            name="emailSignup"
+                            type="email"
+                            className="Signupinput"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="inputField">
+                        {/* <div className='col-25'>비밀번호</div> */}
+                        <input
+                            name="password"
+                            type="password"
+                            className="Signupinput"
+                            minlength="8"
+                            maxLength="16"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="inputField">
+                        {/* <div className='col-25'>이름</div> */}
+                        <input
+                            name="name"
+                            type="text"
+                            className="Signupinput"
+                            // className="col-75"
+                            placeholder="Username"
+                        />
+                    </div>
+                    <div className="SignupBtnwrap">
+                        <input
+                            type="submit"
+                            className="SignupBtn"
+                            value="가입하기"
+                        />
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default SignUp
+export default SignUp;

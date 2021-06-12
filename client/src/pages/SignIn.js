@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import OauthSign from "./OauthSign";
+import "./Signin.css";
+import { withRouter } from "react-router-dom";
 
 class SignIn extends Component {
     constructor(props) {
@@ -13,48 +15,83 @@ class SignIn extends Component {
         this.loginRequestHandler = this.loginRequestHandler.bind(this);
     }
 
-    socialLoginHandler() {
-        window.location.assign("http://localhost");
-    }
+    // socialLoginHandler() {
+    //     window.location.assign("http://localhost");
+    // }
 
     inputHandler(e) {
         this.setState({ [e.target.name]: e.target.value });
+        console.log(e.target.name);
     }
 
+    // ***with유림님***
+    // inputHandler = (key) => (e) => {
+    //     this.setState({ [key]: e.target.value });
+    //     console.log(e.target.value);
+    // };
+
     loginRequestHandler() {
+        const { email, password } = this.state; //+
+
         axios
             .post(
                 "http://localhost:4000/users/login",
                 {
-                    email: this.state.email,
-                    password: this.state.password,
+                    email,
+                    password,
                 },
                 {
-                    "content-type": "application/json",
+                    "Content-Type": "application/json",
                     withCredentials: true,
                 }
             )
             .then(
-                (res) => this.props.loginHandler(res.data)
+                (res) => this.props.inputHandler(res.data)
                 // console.log(res.data)
-            );
+            )
+            .catch((err) => console.log(err));
     }
 
     render() {
         return (
             <div className="Main">
                 <div className="Signinwrap">
+                    <div class="tab-header">
+                        <div class="inactive">Sign Up</div>
+                        <div class="active">Sign In</div>
+                    </div>
+
                     <div className="OauthsignBtnwrap">
-                        <OauthSign></OauthSign>
-                        {/* <button className='OauthsignBtn' onClick={this.socialLoginHandler}><img src='img/googleLogo.png' alt='logo' className='google'/>Sign in with Goggle</button> */}
+                        <OauthSign className="OauthsignBtn"></OauthSign>
+                        {/* <button className='OauthsignBtn' onClick={this.socialLoginHandler}><img src='img/googleLogo.png' alt='logo' className='google'/></button> */}
+                    </div>
+                    <div className="oneline">
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 50,
+                                marginRight: 10,
+                            }}
+                        />
+                        or
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 50,
+                                marginLeft: 10,
+                            }}
+                        />
                     </div>
                     <div className="inputField">
                         {/* <div className='col-25'>이메일</div> */}
                         <input
                             name="emailSignin"
                             type="email"
-                            className="col-75"
+                            className="Signininput"
                             placeholder="Email"
+                            // value={this.state.email}
                             onChange={(e) => this.inputHandler(e)}
                         />
                     </div>
@@ -63,10 +100,11 @@ class SignIn extends Component {
                         <input
                             name="password"
                             type="password"
-                            className="col-75"
-                            minlength="8"
+                            className="Signininput"
+                            minLength="8"
                             maxLength="16"
                             placeholder="Password"
+                            // value={this.state.password}
                             onChange={(e) => this.inputHandler(e)}
                         />
                     </div>
