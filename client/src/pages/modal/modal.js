@@ -32,7 +32,12 @@ class Modal extends Component {
       )
       .then((res) => {
         console.log(res);
+        this.closeModal();
       });
+  };
+  // 스터디 생성시 모달 지우기
+  closeModal = () => {
+    this.setState(this.props.close);
   };
 
   render() {
