@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-//import "./pages/UserInfo.css";
+
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
@@ -25,13 +25,15 @@ const UserInfo = (props) => {
   
  */
 
+  const history = useHistory();
+
   // 비밀번호만 수정 가능하게 만들어야 함!!
   // 초기 비밀번호 input = ""
   const [password, setPassword] = useState("");
 
   // 비밀번호 확인을 위한 훅
   const [validatePassword, setValidatePassword] = useState("");
-  const history = useHistory();
+
   //   const redirect = () => {
   //     history.push("/MyPage");
   //   };
@@ -83,9 +85,9 @@ const UserInfo = (props) => {
         }
       );
 
-      // props.state.history.push("/myPage");
+      // history.push("/MyPage");
     } //else {
-    //  props.state.history.push("/myPage");
+    //  history.push("/MyPage");
     // }
   };
 
@@ -149,7 +151,11 @@ const UserInfo = (props) => {
           ></input>
         </label>
 
-        <button className="save" type="submit">
+        <button
+          className="save"
+          type="submit"
+          onClick={() => history.push("/MyPage")}
+        >
           저장하기
         </button>
       </form>

@@ -83,8 +83,8 @@ button {
   width: 100px;
   height: 40px;
   align-items: center;
-  margin-left: 180px;
-  /* margin-left: 60px; */
+  /* margin-left: 180px; */
+  margin-left: 150px;
   border-radius: 5px;
   border-width: thin;
   background-color: #00bcd4;

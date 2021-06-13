@@ -1,6 +1,6 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 /* div {
   background-image: url("../img/background.png");
@@ -14,7 +14,7 @@
   margin: auto;
 } */
 
-div {
+/* div {
   width: 100%;
   height: 100vh;
   position: absolute;
@@ -120,12 +120,215 @@ img {
 
 .end:hover {
   background-color: #8eacbb;
-}
+} */
 
 /* .stop {
   width: 100px;
   visibility: hidden;
 } */
+/* 
+#text {
+  text-align: center;
+  margin-top: 30em;
+}
+
+input {
+  display: block;
+  width: 900px;
+  margin-left: 25%;
+  height: 40px;
+  padding-left: 5px;
+}
+
+textarea {
+  display: block;
+  width: 900px;
+  height: 300px;
+  margin-left: 25%;
+  margin-top: 1.5em;
+  padding-left: 5px;
+}
+
+.week {
+  float: left;
+  padding-left: 60px;
+  padding-top: 30px;
+  font-size: 1.5em;
+}
+
+.acc_time {
+  float: left;
+  padding-right: 600px;
+  padding-top: 150px;
+  font-size: 1.5em;
+}
+
+.today {
+  font-size: 1.5em;
+  display: block;
+  float: left;
+  padding-top: 30px;
+  padding-left: 150px;
+}
+
+.name {
+  margin-top: 4em;
+  margin-left: 25%;
+  padding-top: 15px;
+  text-align: center;
+  border: 1px solid black;
+  width: 900px;
+  height: 50px;
+  background-color: white;
+  border-radius: 7px;
+  letter-spacing: 5px;
+  padding-left: 10px;
+}
+
+.time {
+  padding-top: 100px;
+  font-size: 6em;
+  padding-left: 95px;
+}
+
+.saveBtn {
+  display: block;
+  margin-top: 54rem;
+  position: absolute;
+}
+
+.save {
+  background-color: #790e8b;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bolder;
+  border: 2px;
+  font-size: 1em;
+}
+
+.save:hover {
+  background-color: #df78ef;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    justify-content: center;
+  }
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: block;
+}
+header {
+  display: flex;
+  position: relative;
+  text-align: right;
+  float: right;
+  margin-right: 5rem;
+  margin-top: 1rem;
+}
+
+.userInfo {
+  margin-right: 0.7rem;
+  border-right: 2px solid #e0e0e0;
+  padding-right: 1rem;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  margin-top: 3rem;
+  margin-left: 10rem;
+  position: absolute;
+}
+
+.go {
+  display: inline;
+  margin-left: 85%;
+  margin-top: 4rem;
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background-color: #26c6da;
+  border-radius: 3px;
+  border: 3px;
+  color: #fafafa;
+  font-weight: bolder;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#container {
+  margin-top: 8rem;
+  margin-left: 1rem;
+}
+
+#timer {
+  overflow: hidden;
+  margin-top: 9em;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 7px;
+  width: 900px;
+  height: 300px;
+  margin-left: 25%;
+  background-color: white;
+}
+
+.buttons {
+  margin-top: 6.5em;
+  text-align: right;
+}
+
+.start {
+  margin-bottom: 5px;
+  width: 120px;
+  height: 50px;
+  margin-right: 2em;
+  font-size: 1em;
+  background-color: #0097a7;
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 2px;
+}
+
+.start:hover {
+  background-color: #56c7d6;
+}
+
+.aloneBtn {
+  text-align: right;
+  margin-top: 11em;
+}
+
+.end {
+  margin-right: 2em;
+  width: 120px;
+  height: 50px;
+  background-color: #34515e;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bolder;
+  border-radius: 5px;
+  border: 2px;
+}
+
+.end:hover {
+  background-color: #8eacbb;
+}
 
 #text {
   text-align: center;

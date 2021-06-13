@@ -26,11 +26,17 @@
 import MyPage from "./pages/Mypage";
 import "./pages/Mypage.css";
 import React from "react";
-import UserInfoPage from "./pages/UserInfoPage";
+//import UserInfoPage from "./pages/UserInfoPage";
+//import UserInfo from "./pages/UserInfo";
+//import "./pages/UserInfo.css";
 
 function App() {
-  //  return <UserInfoPage></UserInfoPage>;
-  return <MyPage></MyPage>;
+  return (
+    <>
+      <MyPage></MyPage>
+    </>
+  );
+  //return <UserInfo></UserInfo>;
 }
 
 export default App;
