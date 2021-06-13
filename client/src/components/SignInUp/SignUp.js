@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 
 class SignUp extends Component {
     constructor(props) {
@@ -15,6 +16,20 @@ class SignUp extends Component {
         return (
             <div className="Main">
                 <div className="Signupwarp">
+                    <div class="tab-header">
+                        <div class="active">Sign Up</div>
+                        <div class="inactive">
+                            <Link
+                                to="/login"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "black",
+                                }}
+                            >
+                                Sign In
+                            </Link>
+                        </div>
+                    </div>
                     <div className="OauthsignupBtnwrap">
                         <button className="OauthsignupBtn">
                             <img

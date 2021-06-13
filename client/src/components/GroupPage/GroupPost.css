@@ -1,23 +1,55 @@
 .main {
     width: 100%;
     height: 100vh;
-    background-color: #f8e7e7;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-size: cover;
+    background-color: black;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+}
+
+.space {
+    width: 100%;
+    height: 80%;
+    margin-top: 200px;
+    margin-left: 100px;
+    flex-wrap: wrap;
 }
 
 .post {
-    position: absolute;
+    /* position: absolute;
     top: 200px;
-    left: 100px;
-    width: 300px;
+    left: 100px; */
+    /* width: 300px;
     height: 350px;
     background-color: black;
     flex-direction: column;
     border-radius: 10px;
+    display: inline-block; */
+    /* margin: 0 auto; */
+
+    /* width: 20rem; */
+    width: 350px;
+    height: 500px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+    /* margin: 1rem; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .title,
-.content {
+.content,
+.userId,
+.publishedAt {
     color: wheat;
     padding: 30px;
     text-align: center;
+    display: block;
+    position: relative;
 }

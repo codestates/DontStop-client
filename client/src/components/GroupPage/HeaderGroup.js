@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function Header() {
+function HeaderGroup() {
     return (
         <Container>
             <Logo>
@@ -10,12 +10,16 @@ function Header() {
                     <img src="img/Logo.png" alt="" />
                 </Link>
             </Logo>
+            <Users>
+                <p>나원빈님</p>
+                <p>이상렬님</p>
+                <p></p>
+            </Users>
             <RightMenu>
                 <Link
                     to="./login"
                     style={{
                         textDecoration: "none",
-                        color: "white",
                     }}
                 >
                     <p>로그인</p>
@@ -24,7 +28,6 @@ function Header() {
                     to="./signup"
                     style={{
                         textDecoration: "none",
-                        color: "white",
                     }}
                 >
                     <p>회원가입</p>
@@ -34,7 +37,7 @@ function Header() {
     );
 }
 
-export default Header;
+export default HeaderGroup;
 
 const Container = styled.div`
     min-height: 60px;
@@ -59,6 +62,14 @@ const Logo = styled.div`
         width: 100px;
         flex-wrap: nowrap;
         cursor: pointer;
+    }
+`;
+
+const Users = styled.div`
+    display: flex;
+    align-items: center;
+
+    p {
     }
 `;
 
