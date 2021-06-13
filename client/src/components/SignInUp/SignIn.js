@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import OauthSign from "./OauthSign";
+import OauthSign from "../../pages/OauthSign";
 import "./Signin.css";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SignIn extends Component {
     constructor(props) {
@@ -15,13 +15,13 @@ class SignIn extends Component {
         this.loginRequestHandler = this.loginRequestHandler.bind(this);
     }
 
-    // socialLoginHandler() {
-    //     window.location.assign("http://localhost");
-    // }
+    socialLoginHandler() {
+        window.location.assign("http://localhost");
+    }
 
     inputHandler(e) {
         this.setState({ [e.target.name]: e.target.value });
-        console.log(e.target.name);
+        console.log(e.target.value);
     }
 
     // ***with유림님***
@@ -45,9 +45,9 @@ class SignIn extends Component {
                     withCredentials: true,
                 }
             )
-            .then(
-                (res) => this.props.inputHandler(res.data)
-                // console.log(res.data)
+            .then((res) =>
+                // this.props.inputHandler(res.data)
+                console.log(res.data)
             )
             .catch((err) => console.log(err));
     }
@@ -57,7 +57,18 @@ class SignIn extends Component {
             <div className="Main">
                 <div className="Signinwrap">
                     <div class="tab-header">
-                        <div class="inactive">Sign Up</div>
+                        <div class="inactive">
+                            <Link
+                                to="/signup"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "black",
+                                }}
+                            >
+                                {" "}
+                                Sign Up
+                            </Link>
+                        </div>
                         <div class="active">Sign In</div>
                     </div>
 
@@ -70,7 +81,7 @@ class SignIn extends Component {
                             style={{
                                 backgroundColor: "#F2F2F2",
                                 width: 175,
-                                marginBottom: 50,
+                                marginBottom: 45,
                                 marginRight: 10,
                             }}
                         />
@@ -79,7 +90,7 @@ class SignIn extends Component {
                             style={{
                                 backgroundColor: "#F2F2F2",
                                 width: 175,
-                                marginBottom: 50,
+                                marginBottom: 45,
                                 marginLeft: 10,
                             }}
                         />
@@ -87,24 +98,24 @@ class SignIn extends Component {
                     <div className="inputField">
                         {/* <div className='col-25'>이메일</div> */}
                         <input
-                            name="emailSignin"
+                            // name="emailSignin"
                             type="email"
                             className="Signininput"
                             placeholder="Email"
-                            // value={this.state.email}
+                            value={this.state.email}
                             onChange={(e) => this.inputHandler(e)}
                         />
                     </div>
                     <div className="inputField">
                         {/* <div className='col-25'>비밀번호</div> */}
                         <input
-                            name="password"
+                            // name="password"
                             type="password"
                             className="Signininput"
                             minLength="8"
                             maxLength="16"
                             placeholder="Password"
-                            // value={this.state.password}
+                            value={this.state.password}
                             onChange={(e) => this.inputHandler(e)}
                         />
                     </div>

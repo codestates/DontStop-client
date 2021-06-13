@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function Header() {
+function HeaderSignin() {
     return (
         <Container>
             <Logo>
@@ -10,31 +10,11 @@ function Header() {
                     <img src="img/Logo.png" alt="" />
                 </Link>
             </Logo>
-            <RightMenu>
-                <Link
-                    to="./login"
-                    style={{
-                        textDecoration: "none",
-                        color: "white",
-                    }}
-                >
-                    <p>로그인</p>
-                </Link>
-                <Link
-                    to="./signup"
-                    style={{
-                        textDecoration: "none",
-                        color: "white",
-                    }}
-                >
-                    <p>회원가입</p>
-                </Link>
-            </RightMenu>
         </Container>
     );
 }
 
-export default Header;
+export default HeaderSignin;
 
 const Container = styled.div`
     min-height: 60px;

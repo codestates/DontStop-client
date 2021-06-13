@@ -1,12 +1,12 @@
 import React from "react";
-import SignIn from "./SignIn";
-import Header from "../components/Main/Header";
+import SignIn from "../components/SignInUp/SignIn";
+import HeaderSignin from "../components/SignInUp/HeaderSignin";
 import Footer from "../components/Main/Footer";
 
 const SignInPage = () => {
     return (
         <>
-            <Header />
+            <HeaderSignin />
             <SignIn />
             <Footer />
         </>
