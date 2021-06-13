@@ -19,12 +19,11 @@ function Banner() {
       });
       //setRanks(여기서 다시받아야되나?)
       setRanks(response.data);
-      console.log(response);
-      return response;
+      console.log(response.data);
     }
     fetchData();
-  }, []);
-  console.log(ranks.data);
+  }, [apiUrl]);
+  console.log(ranks);
 
   return (
     <div className="banner">
@@ -39,7 +38,7 @@ function Banner() {
           <div className="banner__Search">
             <button
               className="banner_SearchBtn"
-              onClick={() => history.push("/studySearch")}
+              onClick={() => history.push("/search")}
             >
               스터디 찾기
             </button>
@@ -67,7 +66,7 @@ function Banner() {
             ))}
           </div>
           <div className="banner__userInfos">
-            <div className="banner__userInfo">{ranks?.data}</div>
+            <div className="banner__userInfo">{ranks}</div>
           </div>
         </div>
         {/* <div className="banner__rank"> */}
