@@ -1,12 +1,15 @@
 .studySearch {
-
   height: 100%;
-  display: flex;
+  grid-row-gap: 2vw;
+  margin: 12rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 15vw);
+  justify-content: space-evenly;
+  /* display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  margin: 9rem 15rem 10rem 15rem;
-  justify-content: space-between;
-  scroll-snap-type: x mandatory;
+  margin: 9rem 10rem 10rem 10rem;
+  scroll-snap-type: x mandatory; */
 }
 
 /* .studySearch::-webkit-scrollbar{
@@ -22,3 +25,10 @@
 {
 	background-color: #d8b6ff;	
 } */
+
+/* 반응형 이어서 해보기 */
+@media screen and (max-width: 768px) {
+  .studySearch {
+    height: 100%;
+  }
+}

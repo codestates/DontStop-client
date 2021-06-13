@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 
+import axios from "axios";
 axios.defaults.withCredentials = true;
 
 const UserInfo = (props) => {
@@ -25,32 +25,34 @@ const UserInfo = (props) => {
   
  */
 
+  const history = useHistory();
+
   // 비밀번호만 수정 가능하게 만들어야 함!!
   // 초기 비밀번호 input = ""
   const [password, setPassword] = useState("");
 
   // 비밀번호 확인을 위한 훅
   const [validatePassword, setValidatePassword] = useState("");
-  const history = useHistory();
+
   //   const redirect = () => {
   //     history.push("/MyPage");
   //   };
 
   // 일단 정보를 서버로부터 받아서 띄워주기
   let userInfo = axios.get("http://localhost:4000/users/info").then((res) => {
-    console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+    //  console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
     return res;
   });
 
   const handlePassword = (e) => {
-    console.log("타겟: ", e.target);
-    console.log("타겟벨류", e.target.value);
+    //  console.log("타겟: ", e.target);
+    //  console.log("타겟벨류", e.target.value);
     setPassword(e.target.value);
   };
 
   const handleValidatePassword = (e) => {
-    console.log("타겟1: ", e.target);
-    console.log("타겟벨류1", e.target.value);
+    //  console.log("타겟1: ", e.target);
+    //  console.log("타겟벨류1", e.target.value);
     setValidatePassword(e.target.value);
   };
 
@@ -83,9 +85,9 @@ const UserInfo = (props) => {
         }
       );
 
-      // props.state.history.push("/myPage");
+      // history.push("/MyPage");
     } //else {
-    //  props.state.history.push("/myPage");
+    //  history.push("/MyPage");
     // }
   };
 
@@ -148,7 +150,12 @@ const UserInfo = (props) => {
             value={validatePassword}
           ></input>
         </label>
-        <button className="save" type="submit">
+
+        <button
+          className="save"
+          type="submit"
+          onClick={() => history.push("/MyPage")}
+        >
           저장하기
         </button>
       </form>

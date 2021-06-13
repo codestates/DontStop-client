@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import StudyHeader from "../components/StudySearch/StudyHeader";
 import Post from "../components/StudySearch/Post";
@@ -16,21 +15,22 @@ function StudySearch() {
       const response = await axios.get(searchUrl, {
         withCredentials: true,
       });
-      setPosts(response);
+      setPosts(response.data.data);
       console.log(response);
-      return response;
     }
     fetchData();
-  }, []);
+  }, [searchUrl]);
+  console.log(posts);
 
   return (
     <>
       <StudyHeader />
       <Button />
       <div className="studySearch">
-        {/* {posts.map((post, idx) => (
-          <Post key={idx} title={post?.title} contents={post?.contents} />
-        ))} */}
+        {posts &&
+          posts.map((post, idx) => (
+            <Post key={idx} title={post?.title} contents={post?.contents} />
+          ))}
         <Post />
         <Post />
         <Post />
@@ -39,7 +39,6 @@ function StudySearch() {
       <Footer />
     </>
   );
-
 }
 
 export default StudySearch;
