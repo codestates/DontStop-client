@@ -16,6 +16,7 @@ import Grouppage from "./pages/Grouppage";
 // import Login from "./components/SignInUp/Login";
 
 const App = () => {
+
     const isLogin = useSelector((state) => state.loginReducer.isLogin);
     return (
         <>
@@ -35,9 +36,23 @@ const App = () => {
             {/* <Route component={Login} path="/loginlogin" /> */}
         </>
     );
-};
+
+//   return (
+//     <>
+//       <Route component={Main} path="/" exact />
+//       <Route component={Mypage} path="/mypage" />
+//       <Route component={SignInPage} path="/login" />
+//       <Route component={SignUpPage} path="/signup" />
+//       <Route component={StudySearch} path="/search" />
+//       <Route component={UserInfo} path="/info" />
+//       <Route component={Grouppage} path="/list" />
+//     </>
+//   );
+
+// };
 
 export default App;
+
 
 // import React from "react";
 // import { Route } from "react-router-dom";
@@ -57,5 +72,6 @@ export default App;
 //         </>
 //     );
 // };
+
 
 // export default App;

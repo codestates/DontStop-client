@@ -6,6 +6,7 @@
 
 .post__img {
   border-radius: 20px;
+  height: 25vh;
 }
 
 .post__title {
@@ -26,7 +27,7 @@
   background-image: none;
   border-color: transparent;
   height: 40px;
-  width: 10vw;
+  width: 150px;
   color: #9725a9;
   border-radius: 10px;
   border-color: #9725a9;

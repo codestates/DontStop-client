@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const MyPage = (props) => {
   console.log("프롭: ", props);
@@ -145,8 +146,12 @@ const MyPage = (props) => {
   return (
     <div>
       <header>
-        <span className="userInfo">회원정보</span>
-        <span className="logout">로그아웃</span>
+        <span className="userInfo">
+          <Link to="/info"> 회원정보</Link>
+        </span>
+        <span className="logout">
+          <Link to="/">로그아웃</Link>
+        </span>
       </header>
       <div className="banner">
         <img src="../img/Logo.png" alt=""></img>

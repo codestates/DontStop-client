@@ -9,11 +9,12 @@ import Header from "../components/Main/Header";
 
 import "./Main.css";
 
+
 function Main({ isLogin }) {
     return (
         <>
             <Header isLogin={isLogin} />
-            <div className="main">
+            <div className="main__main">
                 <Banner />
                 <Section />
                 <Section2 />
@@ -22,6 +23,7 @@ function Main({ isLogin }) {
             </div>
         </>
     );
+
 }
 
 export default Main;
