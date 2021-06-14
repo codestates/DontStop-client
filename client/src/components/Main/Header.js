@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-function Header() {
+function Header({ isLogin }) {
+    const userInfo = useSelector((state) => state.userInfoReducer);
+    const { accessToken } = userInfo;
+    console.log("userInfo", userInfo);
+
     return (
         <Container>
             <Logo>
@@ -10,7 +15,53 @@ function Header() {
                     <img src="img/Logo.png" alt="" />
                 </Link>
             </Logo>
-            <RightMenu>
+            {isLogin ? (
+                <RightMenu>
+                    <Link
+                        to="./mypage"
+                        style={{
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        <p>마이페이지</p>
+                    </Link>
+
+                    <Link
+                        to="/"
+                        style={{
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        <p>로그아웃</p>
+                    </Link>
+                </RightMenu>
+            ) : (
+                <RightMenu>
+                    <Link
+                        to="./login"
+                        style={{
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        <p>로그인</p>
+                    </Link>
+
+                    <Link
+                        to="./signup"
+                        style={{
+                            textDecoration: "none",
+                            color: "white",
+                        }}
+                    >
+                        <p>회원가입</p>
+                    </Link>
+                </RightMenu>
+            )}
+
+            {/* <RightMenu>
                 <Link
                     to="./login"
                     style={{
@@ -20,6 +71,7 @@ function Header() {
                 >
                     <p>로그인</p>
                 </Link>
+                
                 <Link
                     to="./signup"
                     style={{
@@ -29,7 +81,7 @@ function Header() {
                 >
                     <p>회원가입</p>
                 </Link>
-            </RightMenu>
+            </RightMenu> */}
         </Container>
     );
 }
