@@ -12,7 +12,7 @@ function Main() {
   return (
     <>
       <Header />
-      <div className="main">
+      <div className="main__main">
         <Banner />
         <Section />
         <Section2 />
