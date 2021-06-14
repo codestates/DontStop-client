@@ -26,15 +26,29 @@ function StudySearch() {
     <>
       <StudyHeader />
       <Button />
-      <div className="studySearch">
-        {posts &&
-          posts.map((post, idx) => (
-            <Post key={idx} title={post?.title} contents={post?.contents} />
-          ))}
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+      <div className="studySearch__main">
+        <div className="studySearch">
+          {posts &&
+            posts.map((post, idx) => (
+              <Post key={idx} title={post?.title} contents={post?.contents} />
+            ))}
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </div>
       </div>
       <Footer />
     </>
