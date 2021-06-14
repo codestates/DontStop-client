@@ -35,8 +35,13 @@ function Post({ title, contents }) {
   return (
     <div className="post__card">
       <img className="post__img" src="img/Study.png" alt="" />
-      <h2 className="post__title">{title}</h2>
-      <h5 className="post__contents">{truncate(contents, 70)}</h5>
+      <h2 className="post__title">{/*title*/}테스트 테스트</h2>
+      <h5 className="post__contents">
+        {truncate(
+          /*contents*/ "테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트테스트",
+          80
+        )}
+      </h5>
       <button className="post__btn" onClick={setJoin}>
         스터디 가입하기
       </button>

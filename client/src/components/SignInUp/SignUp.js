@@ -14,7 +14,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="Main">
+            <div className="signupMain">
                 <div className="Signupwarp">
                     <div class="tab-header">
                         <div class="active">Sign Up</div>
@@ -45,7 +45,7 @@ class SignUp extends Component {
                             style={{
                                 backgroundColor: "#F2F2F2",
                                 width: 175,
-                                marginBottom: 50,
+                                marginBottom: 40,
                                 marginRight: 10,
                             }}
                         />
@@ -54,12 +54,12 @@ class SignUp extends Component {
                             style={{
                                 backgroundColor: "#F2F2F2",
                                 width: 175,
-                                marginBottom: 50,
+                                marginBottom: 40,
                                 marginLeft: 10,
                             }}
                         />
                     </div>
-                    <div className="inputField">
+                    <div className="signupinputField">
                         {/* <div className='col-25'>이메일</div> */}
                         <input
                             name="emailSignup"
@@ -68,7 +68,7 @@ class SignUp extends Component {
                             placeholder="Email"
                         />
                     </div>
-                    <div className="inputField">
+                    <div className="signupinputField">
                         {/* <div className='col-25'>비밀번호</div> */}
                         <input
                             name="password"
@@ -79,7 +79,7 @@ class SignUp extends Component {
                             placeholder="Password"
                         />
                     </div>
-                    <div className="inputField">
+                    <div className="signupinputField">
                         {/* <div className='col-25'>이름</div> */}
                         <input
                             name="name"
