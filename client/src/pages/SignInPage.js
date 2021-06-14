@@ -2,16 +2,34 @@ import React from "react";
 import SignIn from "../components/SignInUp/SignIn";
 import HeaderSignin from "../components/SignInUp/HeaderSignin";
 import Footer from "../components/Main/Footer";
+import { Component } from "react";
 
-const SignInPage = () => {
-    return (
-        <>
-            <HeaderSignin />
-            <SignIn />
-            <Footer />
-        </>
-    );
-};
+// const SignInPage = () => {
+//     return (
+//         <>
+//             <HeaderSignin />
+//             <SignIn />
+//             <Footer />
+//         </>
+//     );
+// };
+
+// export default SignInPage;
+
+class SignInPage extends Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <>
+                <HeaderSignin />
+                <SignIn loginHandler={this.loginHandler} />
+                <Footer />
+            </>
+        );
+    }
+}
 
 export default SignInPage;
 
