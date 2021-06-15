@@ -100,25 +100,11 @@ const UserInfo = (props) => {
 
   return (
     <div id="container2">
-      {/* <div id="wrap">
-        <header>
-          <span className="backToMyPage">마이페이지</span>
-          <span className="logout">로그아웃</span>
-          <img className="banner" src="/img/Logo.png" alt=""></img>
-        </header> */}
       <Header />
 
       <form onSubmit={handleClickSave}>
         <label className="information2">회원정보</label>
-        {/* <label>
-          그룹 이름
-          <input
-            className="groupName"
-            type="text"
-            value="{props.userInfo.groupName}"
-            readOnly
-          ></input>
-        </label> */}
+
         <label>
           이름
           <input
@@ -165,9 +151,38 @@ const UserInfo = (props) => {
         </button>
       </form>
       {/* <Footer /> */}
-      {/* <footer>
-        <img src="./img/GitLogo.png" alt=""/>
-      </footer> */}
+      <footer id="footer">
+        <img src="./img/FooterLogo.png" alt="" />
+        <img src="./img/GitLogo.png" alt="" />
+        <span
+          onClick={() =>
+            (window.location.href = "https://github.com/wonbeenna")
+          }
+        >
+          나원빈
+        </span>
+        <span
+          onClick={() =>
+            (window.location.href = "https://github.com/baymaxxxxx")
+          }
+        >
+          김지은
+        </span>
+        <span
+          onClick={() =>
+            (window.location.href = "https://github.com/Lee-SangRyeol")
+          }
+        >
+          이상렬
+        </span>
+        <span
+          onClick={() =>
+            (window.location.href = "https://github.com/yoolee741")
+          }
+        >
+          이유림
+        </span>
+      </footer>
     </div>
   );
 };

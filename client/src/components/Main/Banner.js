@@ -12,17 +12,20 @@ function Banner() {
     const [ranks, setRanks] = useState([]);
     const apiUrl = "http://localhost:4000/users/rank";
 
-    useEffect(() => {
-        async function fetchData() {
-            const response = await axios.get(apiUrl, {
-                withCredentials: true,
-            });
-            //setRanks(여기서 다시받아야되나?)
-            setRanks(response.data);
-            console.log(response.data);
-        }
-        fetchData();
-    }, [apiUrl]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(apiUrl, {
+        withCredentials: true,
+      });
+      //setRanks(여기서 다시받아야되나?)
+      setRanks(response.data);
+      console.log(response.data);
+    }
+    fetchData();
+  }, [apiUrl]);
+  console.log(ranks);
+
 
     return (
         <div className="banner">

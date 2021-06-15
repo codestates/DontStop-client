@@ -129,11 +129,12 @@ form {
   flex-direction: column;
   display: inline-grid;
   width: 30em;
-  height: 35em;
+  height: 38em;
   border-radius: 10px;
   /* background-color: #e0f2f1; */
   text-align: left;
-  background-color: #af8eb5;
+  /* background-color: #af8eb5; */
+  background-color: #b1ddd9;
   opacity: 0.9;
   padding: 25px;
   margin-bottom: 10px;
@@ -151,31 +152,32 @@ form {
   font: bolder;
   font-size: 30px;
   text-align: center;
-  color: white;
+  color: #006978;
 }
 
 .save2 {
   width: 13em;
-  margin-left: 10em;
+  margin-left: 9.5em;
   /* background-color: #00bcd4; */
   border-radius: 25px;
-  background-color: #5c007a;
-
+  /* background-color: #5c007a; */
+  background-color: #006064;
   color: white;
   font: bolder;
   font-size: medium;
-  border: none;
+  border: 1px;
   cursor: pointer;
   width: 130px;
   height: 45px;
 }
 
 .save2:hover {
-  background-color: #9c4dcc;
+  /* background-color: #9c4dcc; */
+  background-color: #008ba3;
 }
 
 label {
-  color: white;
+  color: #006978;
   font-size: 18px;
   padding: 20px;
   /* padding-left: 20px;
@@ -195,49 +197,45 @@ label {
 } */
 
 .userName2 {
-  /* margin-left: 80px; */
-  margin-left: 7px;
+  margin-left: 85px;
   width: 250px;
   height: 40px;
-  margin: 10px 15px;
   border-radius: 5px;
-  margin-left: 30px;
   letter-spacing: 2px;
   padding-left: 10px;
+  background-color: #e4ffff;
+  border: none;
 }
 
 .email2 {
-  /* margin-left: 65px; */
-  margin-left: 7px;
+  margin-left: 70px;
   width: 250px;
   height: 40px;
-  margin: 10px 15px;
   border-radius: 5px;
-  margin-left: 30px;
   letter-spacing: 2px;
   padding-left: 10px;
+  background-color: #e4ffff;
+  border: none;
 }
 
 .checkPassword2 {
-  /* margin-left: 20px; */
-  margin-left: 7px;
+  margin-left: 20px;
   width: 250px;
   height: 40px;
-  margin: 10px 15px;
   border-radius: 5px;
-  margin-left: 30px;
   letter-spacing: 2px;
   padding-left: 10px;
+  background-color: #e4ffff;
+  border: none;
 }
 
 .password2 {
-  /* margin-left: 50px; */
-  margin-left: 7px;
+  margin-left: 55px;
   width: 250px;
   height: 40px;
-  margin: 10px 15px;
   border-radius: 5px;
-  margin-left: 30px;
   letter-spacing: 2px;
   padding-left: 10px;
+  background-color: #e4ffff;
+  border: none;
 }
