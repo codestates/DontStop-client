@@ -17,7 +17,7 @@ class Modal extends Component {
     this.setState({ [key]: e.target.value });
   };
 
-  insertHandler = async () => {
+  insertHandler = async () => { // 만들기 토큰 필요
     const insertUlr = "http://localhost:4000/groups/search";
     await axios
       .post(
