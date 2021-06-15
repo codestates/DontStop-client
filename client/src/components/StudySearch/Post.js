@@ -3,8 +3,13 @@ import React, { useState, useEffect } from "react";
 import "./Post.css";
 
 function Post({ title, contents }) {
-    const [join, setJoin] = useState([]);
-    const joinUrl = "http://localhost:4000/groups/join";
+
+  const [join, setJoin] = useState({
+    group_id: "",
+  });
+
+  const joinUrl = "http://localhost:4000/groups/join";
+
 
     useEffect(() => {
         async function fetchData() {

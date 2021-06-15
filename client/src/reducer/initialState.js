@@ -1,10 +1,8 @@
 export const initialState = {
-    userInfo: {
-        userId: null,
-        name: null,
-        email: null,
-        password: null,
-        accessToken: null,
-    },
-    isLogin: false,
+  userInfo: {
+    email: "",
+    password: "",
+    accessToken: "",
+  },
+  loginStatus: false,
 };

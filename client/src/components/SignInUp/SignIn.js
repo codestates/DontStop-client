@@ -2,156 +2,205 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import axios from "axios";
-import { setLoginStatus, setUserInfo } from "../../action/auth";
+import { setUserInfo, toggleLoginStatus } from "../../actions";
+
 import OauthSign from "../../pages/OauthSign";
 import "./Signin.css";
 
 export default function SignIn() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signIn, setSignIn] = useState({
+    email: "",
+    password: "",
+    accessToken: "",
+    loginStatus: true,
+  });
 
-    const [signIn, setSignIn] = useState({
-        email: "",
-        password: "",
-        isLogin: false,
-    });
+  const emailHandler = (e) => {
+    setEmail(e.target.value);
+  };
 
-    const { email, password, isLogin } = signIn;
+  const passwordHandler = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const inputHandler = (key) => (e) => {
-        setSignIn({
-            ...signIn,
-            [key]: e.target.value,
-        });
-    };
-
-    useEffect(() => {
-        if (isLogin) {
-            return () => dispatch(setLoginStatus(true));
+  const loginHandler = () => {
+    axios
+      .post(
+        "http://localhost:4000/users/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
         }
-    }, [isLogin]);
 
-    const url = new URL(window.location.href);
-    // const authorizationCode = url.searchParams.get("login");
+//     }, [isLogin]);
 
-    const createToken = async () => {
-        const res = await axios
-            .post(
-                "http://localhost:4000/users/login",
-                {
-                    email,
-                    password,
-                },
-                {
-                    "Content-Type": "application/json",
-                    withCredentials: true,
-                }
-            )
-            .then((res) => {
-                dispatch(setUserInfo(res.data.accessToken));
-                console.log("11", res.data.accessToken);
-                setSignIn({
-                    ...signIn,
-                    isLogin: true,
-                });
-            })
+//     const url = new URL(window.location.href);
+//     // const authorizationCode = url.searchParams.get("login");
 
-            // this.props.inputHandler(res.data)
-            // console.log("resres", res)
+//     const createToken = async () => {
+//         const res = await axios
+//             .post(
+//                 "http://localhost:4000/users/login",
+//                 {
+//                     email,
+//                     password,
+//                 },
+//                 {
+//                     "Content-Type": "application/json",
+//                     withCredentials: true,
+//                 }
+//             )
+//             .then((res) => {
+//                 dispatch(setUserInfo(res.data.accessToken));
+//                 console.log("11", res.data.accessToken);
+//                 setSignIn({
+//                     ...signIn,
+//                     isLogin: true,
+//                 });
+//             })
 
-            .catch((err) => console.log(err));
-    };
+//             // this.props.inputHandler(res.data)
+//             // console.log("resres", res)
 
-    // const createToken = async () => {
-    //     await fetch(`/login`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             email: email,
-    //             password,
-    //         }),
-    //         credentials: "include",
-    //     });
-    // };
+//             .catch((err) => console.log(err));
+//     };
 
-    const loginClick = async () => {
-        const token = await createToken();
-        console.log("token", token);
-    };
+//     // const createToken = async () => {
+//     //     await fetch(`/login`, {
+//     //         method: "POST",
+//     //         headers: {
+//     //             "Content-Type": "application/json",
+//     //         },
+//     //         body: JSON.stringify({
+//     //             email: email,
+//     //             password,
+//     //         }),
+//     //         credentials: "include",
+//     //     });
+//     // };
 
-    console.log("signIn", signIn);
+//     const loginClick = async () => {
+//         const token = await createToken();
+//         console.log("token", token);
+//     };
 
-    //     dispatch(setUserInfo(res.data));
-    // };
+//     console.log("signIn", signIn);
 
-    return (
-        <div className="signinMain">
-            <div className="Signinwrap">
-                <div class="tab-header">
-                    <div class="inactive">
-                        <Link
-                            to="/signup"
-                            style={{
-                                textDecoration: "none",
-                                color: "black",
-                            }}
-                        >
-                            Sign Up
-                        </Link>
-                    </div>
+//     //     dispatch(setUserInfo(res.data));
+//     // };
 
-                    <div class="active">Sign In</div>
-                </div>
+//     return (
+//         <div className="signinMain">
+//             <div className="Signinwrap">
+//                 <div class="tab-header">
+//                     <div class="inactive">
+//                         <Link
+//                             to="/signup"
+//                             style={{
+//                                 textDecoration: "none",
+//                                 color: "black",
+//                             }}
+//                         >
+//                             Sign Up
+//                         </Link>
+//                     </div>
 
-                <div className="OauthsignBtnwrap">
-                    <OauthSign className="OauthsignBtn"></OauthSign>
-                </div>
-                <div className="oneline">
-                    <hr
-                        style={{
-                            backgroundColor: "#F2F2F2",
-                            width: 175,
-                            marginBottom: 40,
-                            marginRight: 10,
-                        }}
-                    />
-                    or
-                    <hr
-                        style={{
-                            backgroundColor: "#F2F2F2",
-                            width: 175,
-                            marginBottom: 40,
-                            marginLeft: 10,
-                        }}
-                    />
-                </div>
-                <div className="inputField">
-                    <input
-                        type="email"
-                        value={email}
-                        className="Signininput"
-                        placeholder="Email"
-                        onChange={inputHandler("email")}
-                    />
-                </div>
-                <div className="inputField">
-                    <input
-                        type="password"
-                        value={password}
-                        className="Signininput"
-                        placeholder="Password"
-                        onChange={inputHandler("password")}
-                    />
-                </div>
-                <div className="SigninBtnwrap">
-                    <button className="SigninBtn" onClick={loginClick}>
-                        SIGN IN
-                    </button>
-                </div>
-            </div>
+//                     <div class="active">Sign In</div>
+//                 </div>
+
+      )
+      .then((res) => {
+        const token = res.data.accessToken; //토큰 받아옴 확인
+        dispatch(setUserInfo(email, password, token));
+        dispatch(toggleLoginStatus(true));
+      });
+    history.push("/");
+  };
+  //   const loginClick = async () => {
+  //     const token = await createToken();
+  //     console.log("token", token);
+  //   };
+
+  //   console.log("signIn", signIn);
+
+  //     dispatch(setUserInfo(res.data));
+  // };
+
+  return (
+    <div className="signinMain">
+      <div className="Signinwrap">
+        <div class="tab-header">
+          <div class="inactive">
+            <Link
+              to="/signup"
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}
+            >
+              Sign Up
+            </Link>
+          </div>
+
+          <div class="active">Sign In</div>
         </div>
-    );
+
+
+        <div className="OauthsignBtnwrap">
+          <OauthSign className="OauthsignBtn"></OauthSign>
+        </div>
+        <div className="oneline">
+          <hr
+            style={{
+              backgroundColor: "#F2F2F2",
+              width: 175,
+              marginBottom: 40,
+              marginRight: 10,
+            }}
+          />
+          or
+          <hr
+            style={{
+              backgroundColor: "#F2F2F2",
+              width: 175,
+              marginBottom: 40,
+              marginLeft: 10,
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <input
+            type="email"
+            value={email}
+            className="Signininput"
+            placeholder="Email"
+            onChange={emailHandler}
+          />
+        </div>
+        <div className="inputField">
+          <input
+            type="password"
+            value={password}
+            className="Signininput"
+            placeholder="Password"
+            onChange={passwordHandler}
+          />
+        </div>
+        <div className="SigninBtnwrap">
+          <button className="SigninBtn" onClick={loginHandler}>
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // export default SignIn;

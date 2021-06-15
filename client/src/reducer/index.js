@@ -1,20 +1,18 @@
 import { combineReducers } from "redux";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import loginReducer from "./loginReducer";
+import loginStatusReducer from "./loginStatusReducer";
 import userInfoReducer from "./userInfoReducer";
-// import notificationReducer from "./notificationReducer";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
 
 const persistConfig = {
-    key: "root",
-    storage,
-    whitelist: ["loginReducer", "userInfoReducer"],
+  key: "root",
+  storage,
+  whitelist: ["loginStatusReducer", "userInfoReducer"],
 };
 
 const rootReducer = combineReducers({
-    loginReducer,
-    userInfoReducer,
-    // notificationReducer,
+  loginStatusReducer,
+  userInfoReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
