@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Mypage.css";
+import Footer from "../components/Main/Footer";
 
 const MyPage = (props) => {
   console.log("프롭: ", props);
@@ -127,7 +129,7 @@ const MyPage = (props) => {
   // API 받아와보자
   const [quote, setQuote] = useState("");
   const getQuotes = () => {
-    const randomQuotes = `https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json`;
+    const randomQuotes = `http://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json`;
     let allQuotes = axios
       .get(randomQuotes)
       .then((data) => {
@@ -141,52 +143,61 @@ const MyPage = (props) => {
       .catch((err) => console.log("명언에러: ", err));
   };
 
+  // const [quote, setQuote] = useState("");
+  // const getQuotes = () => {
+  //   const randomQuotes = "https://type.fit/api/quotes";
+  //   let allQuotes = axios.get(randomQuotes).then((data) => {
+  //     console.log("명언: ", data);
+  //   });
+  // };
+
   // ----------------------------------------------------------------------
 
   return (
-    <div>
+    <div id="wrapper">
       <header>
-        <span className="userInfo">
+        <span className="userInfo1">
           <Link to="/info"> 회원정보</Link>
         </span>
-        <span className="logout">
+        <span className="logout1">
           <Link to="/">로그아웃</Link>
         </span>
       </header>
-      <div className="banner">
+
+      <div className="banner1">
         <img src="../img/Logo.png" alt=""></img>
-        <button className="go" onClick={getQuotes}>
+        <button className="go1" onClick={getQuotes}>
           그룹일지
         </button>
       </div>
-      <div id="container">
-        <button className="name" onClick={getQuotes}>
+      <div id="container1">
+        <button className="name1" onClick={getQuotes}>
           {quote}
         </button>
-        <div id="timer">
-          <span className="week">이번주 나의 스터디</span>
+        <div id="timer1">
+          <span className="week1">이번주 나의 스터디</span>
 
-          <div className="acc_time">{time / 1000}</div>
+          <div className="acc_time1">{time / 1000}</div>
 
-          <span className="today">오늘 나의 스터디</span>
-          <div className="time">
+          <span className="today1">오늘 나의 스터디</span>
+          <div className="time1">
             {/* slice(0, 1) 안먹힘.. => 10초 미만인 경우 숫자가 0 포함 2개밖에 안되서 그런것인가?! */}
             <span>{("0" + Math.floor((time / 3600000) % 24)).slice(-2)}</span>
             <span>:{("0" + Math.floor((time / 60000) % 60)).slice(-2)}</span>
             <span>:{("0" + Math.floor((time / 1000) % 60)).slice(-2)}</span>
           </div>
-          <div className="buttons">
-            <button className="start" onClick={handleStartBtn}>
+          <div className="buttons1">
+            <button className="start1" onClick={handleStartBtn}>
               {startBtn ? "일시정지" : "시작"}
             </button>
           </div>
-          <div className="aloneBtn">
-            <button className="end" onClick={handleEndBtn}>
+          <div className="aloneBtn1">
+            <button className="end1" onClick={handleEndBtn}>
               종료
             </button>
           </div>
         </div>
-        <div id="text">
+        <div id="text1">
           <input
             type="text"
             placeholder="제목을 입력하세요"
@@ -199,12 +210,13 @@ const MyPage = (props) => {
             value={contents}
           ></textarea>
         </div>
-        <div className="saveBtn">
-          <button className="save" onClick={handleClickSave}>
+        <div className="saveBtn1">
+          <button className="save1" onClick={handleClickSave}>
             일기 저장
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -219,7 +219,9 @@ textarea {
   }
 } */
 
-* {
+/* ---------------------------------------------------------- */
+
+/* * {
   box-sizing: border-box;
 }
 
@@ -229,6 +231,7 @@ div {
   position: absolute;
   display: block;
 }
+
 header {
   display: flex;
   position: relative;
@@ -238,7 +241,7 @@ header {
   margin-top: 1rem;
 }
 
-.userInfo {
+.userInfo1 {
   margin-right: 0.7rem;
   border-right: 2px solid #e0e0e0;
   padding-right: 1rem;
@@ -252,7 +255,7 @@ img {
   position: absolute;
 }
 
-.go {
+.go1 {
   display: inline;
   margin-left: 85%;
   margin-top: 4rem;
@@ -268,12 +271,12 @@ img {
   cursor: pointer;
 }
 
-#container {
+#container1 {
   margin-top: 8rem;
   margin-left: 1rem;
 }
 
-#timer {
+#timer1 {
   overflow: hidden;
   margin-top: 9em;
   text-align: center;
@@ -285,12 +288,12 @@ img {
   background-color: white;
 }
 
-.buttons {
+.buttons1 {
   margin-top: 6.5em;
   text-align: right;
 }
 
-.start {
+.start1 {
   margin-bottom: 5px;
   width: 120px;
   height: 50px;
@@ -304,16 +307,16 @@ img {
   border: 2px;
 }
 
-.start:hover {
+.start1:hover {
   background-color: #56c7d6;
 }
 
-.aloneBtn {
+.aloneBtn1 {
   text-align: right;
   margin-top: 11em;
 }
 
-.end {
+.end1 {
   margin-right: 2em;
   width: 120px;
   height: 50px;
@@ -326,11 +329,11 @@ img {
   border: 2px;
 }
 
-.end:hover {
+.end1:hover {
   background-color: #8eacbb;
 }
 
-#text {
+#text1 {
   text-align: center;
   margin-top: 30em;
 }
@@ -352,21 +355,21 @@ textarea {
   padding-left: 5px;
 }
 
-.week {
+.week1 {
   float: left;
   padding-left: 60px;
   padding-top: 30px;
   font-size: 1.5em;
 }
 
-.acc_time {
+.acc_time1 {
   float: left;
   padding-right: 600px;
   padding-top: 150px;
   font-size: 1.5em;
 }
 
-.today {
+.today1 {
   font-size: 1.5em;
   display: block;
   float: left;
@@ -374,7 +377,7 @@ textarea {
   padding-left: 150px;
 }
 
-.name {
+.name1 {
   margin-top: 4em;
   margin-left: 25%;
   padding-top: 15px;
@@ -388,19 +391,19 @@ textarea {
   padding-left: 10px;
 }
 
-.time {
+.time1 {
   padding-top: 100px;
   font-size: 6em;
   padding-left: 95px;
 }
 
-.saveBtn {
+.saveBtn1 {
   display: block;
   margin-top: 54rem;
   position: absolute;
 }
 
-.save {
+.save1 {
   background-color: #790e8b;
   cursor: pointer;
   width: 150px;
@@ -412,12 +415,35 @@ textarea {
   font-size: 1em;
 }
 
-.save:hover {
+.save1:hover {
   background-color: #df78ef;
 }
 
 @media screen and (max-width: 768px) {
-  #container {
+  #container1 {
     justify-content: center;
   }
+} */
+
+/*----------------------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  text-align: right;
+}
+
+.banner1 {
+  align-items: center;
+}
+
+.go1 {
+  text-align: center;
 }

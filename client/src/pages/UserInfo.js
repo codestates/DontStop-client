@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
+import "./UserInfo.css";
+//import Footer from "../components/Main/Footer";
+import Header from "../components/Main/Header";
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
@@ -40,9 +42,11 @@ const UserInfo = (props) => {
 
   // 일단 정보를 서버로부터 받아서 띄워주기
   let userInfo = axios.get("http://localhost:4000/users/info").then((res) => {
-    //  console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+    console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
     return res;
   });
+
+  console.log("userInfo머니: ", userInfo);
 
   const handlePassword = (e) => {
     //  console.log("타겟: ", e.target);
@@ -85,27 +89,28 @@ const UserInfo = (props) => {
         }
       );
 
-      // history.push("/MyPage");
-    } //else {
-    //  history.push("/MyPage");
-    // }
+      history.push("/MyPage");
+    } else {
+      history.push("/MyPage");
+    }
   };
 
   // src 에 저장시에는 import를 이용해야 함
   // public에 저장 시 경로 이용
 
   return (
-    <div>
+    <div id="container2">
       {/* <div id="wrap">
         <header>
           <span className="backToMyPage">마이페이지</span>
           <span className="logout">로그아웃</span>
           <img className="banner" src="/img/Logo.png" alt=""></img>
         </header> */}
+      <Header />
 
       <form onSubmit={handleClickSave}>
-        <label className="information">회원정보</label>
-        <label>
+        <label className="information2">회원정보</label>
+        {/* <label>
           그룹 이름
           <input
             className="groupName"
@@ -113,11 +118,11 @@ const UserInfo = (props) => {
             value="{props.userInfo.groupName}"
             readOnly
           ></input>
-        </label>
+        </label> */}
         <label>
           이름
           <input
-            className="userName"
+            className="userName2"
             type="text"
             value="{props.userInfo.name}"
             readOnly
@@ -126,7 +131,7 @@ const UserInfo = (props) => {
         <label>
           이메일
           <input
-            className="email"
+            className="email2"
             type="text"
             value="{props.userInfo.email}"
             readOnly
@@ -135,7 +140,7 @@ const UserInfo = (props) => {
         <label>
           비밀번호
           <input
-            className="password"
+            className="password2"
             type="password"
             onChange={handlePassword}
             value={password}
@@ -144,7 +149,7 @@ const UserInfo = (props) => {
         <label>
           비밀번호 확인
           <input
-            className="checkPassword"
+            className="checkPassword2"
             type="password"
             onChange={handleValidatePassword}
             value={validatePassword}
@@ -152,13 +157,17 @@ const UserInfo = (props) => {
         </label>
 
         <button
-          className="save"
+          className="save2"
           type="submit"
-          onClick={() => history.push("/MyPage")}
+          // onClick={() => history.push("/MyPage")}
         >
           저장하기
         </button>
       </form>
+      {/* <Footer /> */}
+      {/* <footer>
+        <img src="./img/GitLogo.png" alt=""/>
+      </footer> */}
     </div>
   );
 };
