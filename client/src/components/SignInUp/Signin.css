@@ -86,9 +86,9 @@
     justify-content: center;
 }
 
-input::placeholder {
+/* input::placeholder {
     font-size: small;
-}
+} */
 
 .SigninBtnwrap {
     width: 85%;
@@ -135,6 +135,10 @@ input::placeholder {
     width: 380px;
     height: 60%;
     padding: 3px;
+    text-align: left;
+    border-radius: 5px;
+    background-color: #f7e7e8;
+    border: 5px solid #f7e7e8;
 }
 
 .OauthsignBtn:hover {
@@ -148,13 +152,13 @@ input::placeholder {
 }
 
 /* input[type="text"]  */
-input[type="email"],
+/* input[type="email"],
 input[type="password"] {
     text-align: left;
     border-radius: 5px;
     background-color: #f7e7e8;
     border: 5px solid #f7e7e8;
-}
+} */
 
 /* .col-25 {
     float: left;
