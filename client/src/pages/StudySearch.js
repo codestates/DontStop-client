@@ -12,9 +12,15 @@ function StudySearch() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(searchUrl, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        searchUrl,
+        {
+          headers: {},
+        },
+        {
+          withCredentials: true,
+        }
+      );
       setPosts(response.data.data);
       console.log(response);
     }

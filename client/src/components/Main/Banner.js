@@ -23,6 +23,7 @@ function Banner() {
     }
     fetchData();
   }, [apiUrl]);
+  console.log(ranks);
 
   return (
     <div className="banner">
