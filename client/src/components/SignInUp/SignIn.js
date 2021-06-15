@@ -61,6 +61,20 @@ export default function SignIn() {
             .catch((err) => console.log(err));
     };
 
+    // const createToken = async () => {
+    //     await fetch(`/login`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             email: email,
+    //             password,
+    //         }),
+    //         credentials: "include",
+    //     });
+    // };
+
     const loginClick = async () => {
         const token = await createToken();
         console.log("token", token);

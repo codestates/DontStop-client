@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
+import OauthSign from "../../pages/OauthSign";
 
 class SignUp extends Component {
     constructor(props) {
@@ -31,14 +32,15 @@ class SignUp extends Component {
                         </div>
                     </div>
                     <div className="OauthsignupBtnwrap">
-                        <button className="OauthsignupBtn">
+                        {/* <button className="OauthsignupBtn">
                             <img
                                 src="img/googleLogo.png"
                                 alt="logo"
                                 className="google"
                             />
                             Google
-                        </button>
+                        </button> */}
+                        <OauthSign className="OauthsignBtn"></OauthSign>
                     </div>
                     <div className="oneline">
                         <hr
@@ -84,7 +86,7 @@ class SignUp extends Component {
                         <input
                             name="name"
                             type="text"
-                            className="Signupinput"
+                            className="Signupnameinput"
                             // className="col-75"
                             placeholder="Username"
                         />
