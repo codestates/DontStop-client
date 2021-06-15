@@ -1,13 +1,14 @@
-import { SET_USER_INFO } from "../action/auth";
 import { initialState } from "./initialState";
+import { ACTIONS } from "../actions/index";
 
 const userInfoReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SET_USER_INFO:
-            return { ...state, userInfo: action.payload };
-        default:
-            return state;
+  switch (action.type) {
+    case ACTIONS.SET_USERINFO: {
+      return { userInfo: action.payload };
     }
+    default:
+      return state;
+  }
 };
 
 export default userInfoReducer;

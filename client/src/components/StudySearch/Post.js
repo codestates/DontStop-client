@@ -3,7 +3,10 @@ import React, { useState, useEffect } from "react";
 import "./Post.css";
 
 function Post({ title, contents }) {
-  const [join, setJoin] = useState([]);
+  const [join, setJoin] = useState({
+    group_id: "",
+  });
+
   const joinUrl = "http://localhost:4000/groups/join";
 
   useEffect(() => {
