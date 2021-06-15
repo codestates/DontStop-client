@@ -38,6 +38,83 @@ export default function SignIn() {
         {
           withCredentials: true,
         }
+
+//     }, [isLogin]);
+
+//     const url = new URL(window.location.href);
+//     // const authorizationCode = url.searchParams.get("login");
+
+//     const createToken = async () => {
+//         const res = await axios
+//             .post(
+//                 "http://localhost:4000/users/login",
+//                 {
+//                     email,
+//                     password,
+//                 },
+//                 {
+//                     "Content-Type": "application/json",
+//                     withCredentials: true,
+//                 }
+//             )
+//             .then((res) => {
+//                 dispatch(setUserInfo(res.data.accessToken));
+//                 console.log("11", res.data.accessToken);
+//                 setSignIn({
+//                     ...signIn,
+//                     isLogin: true,
+//                 });
+//             })
+
+//             // this.props.inputHandler(res.data)
+//             // console.log("resres", res)
+
+//             .catch((err) => console.log(err));
+//     };
+
+//     // const createToken = async () => {
+//     //     await fetch(`/login`, {
+//     //         method: "POST",
+//     //         headers: {
+//     //             "Content-Type": "application/json",
+//     //         },
+//     //         body: JSON.stringify({
+//     //             email: email,
+//     //             password,
+//     //         }),
+//     //         credentials: "include",
+//     //     });
+//     // };
+
+//     const loginClick = async () => {
+//         const token = await createToken();
+//         console.log("token", token);
+//     };
+
+//     console.log("signIn", signIn);
+
+//     //     dispatch(setUserInfo(res.data));
+//     // };
+
+//     return (
+//         <div className="signinMain">
+//             <div className="Signinwrap">
+//                 <div class="tab-header">
+//                     <div class="inactive">
+//                         <Link
+//                             to="/signup"
+//                             style={{
+//                                 textDecoration: "none",
+//                                 color: "black",
+//                             }}
+//                         >
+//                             Sign Up
+//                         </Link>
+//                     </div>
+
+//                     <div class="active">Sign In</div>
+//                 </div>
+
       )
       .then((res) => {
         const token = res.data.accessToken; //토큰 받아옴 확인
@@ -74,6 +151,7 @@ export default function SignIn() {
 
           <div class="active">Sign In</div>
         </div>
+
 
         <div className="OauthsignBtnwrap">
           <OauthSign className="OauthsignBtn"></OauthSign>

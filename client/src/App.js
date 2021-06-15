@@ -13,9 +13,10 @@ import Mypage from "./pages/Mypage";
 import StudySearch from "./pages/StudySearch";
 import UserInfo from "./pages/UserInfo";
 import Grouppage from "./pages/Grouppage";
-// import Login from "./components/SignInUp/Login";
+import Login from "./components/SignInUp/Login";
 
 const App = () => {
+
   const isLogin = useSelector(
     (state) => state.loginStatusReducer.loginStatus.loginStatus
   );
@@ -51,6 +52,7 @@ const App = () => {
   //     </>
   //   );
 
+
   // };
 };
 export default App;
@@ -73,5 +75,3 @@ export default App;
 //         </>
 //     );
 // };
-
-// export default App;
