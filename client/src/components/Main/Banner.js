@@ -23,7 +23,6 @@ function Banner() {
     }
     fetchData();
   }, [apiUrl]);
-  console.log(ranks);
 
   return (
     <div className="banner">
@@ -66,7 +65,15 @@ function Banner() {
             ))}
           </div>
           <div className="banner__userInfos">
-            <div className="banner__userInfo">{ranks}</div>
+            {/* <div className="banner__userInfo">{Object.values(ranks)}</div> */}
+            {Object.values(ranks).map((rank) => {
+              return (
+                //리턴해야됨,,,
+                <div className="banner__userInfo" rank={rank}>
+                  {rank}
+                </div>
+              );
+            })}
           </div>
         </div>
         {/* <div className="banner__rank"> */}
