@@ -155,7 +155,7 @@ const MyPage = (props) => {
 
   return (
     <div id="wrapper">
-      <header>
+      <header className="header">
         <span className="userInfo1">
           <Link to="/info"> 회원정보</Link>
         </span>
