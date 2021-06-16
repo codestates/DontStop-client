@@ -1,4 +1,4 @@
-.Main {
+.signinMain {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -66,7 +66,7 @@
 
 .inputField {
     /* width: 100%; */
-    height: 100px;
+    height: 50px;
     padding: 5px;
     display: table;
     align-items: center;
@@ -86,13 +86,13 @@
     justify-content: center;
 }
 
-input::placeholder {
+/* input::placeholder {
     font-size: small;
-}
+} */
 
 .SigninBtnwrap {
     width: 85%;
-    padding-top: 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -135,6 +135,10 @@ input::placeholder {
     width: 380px;
     height: 60%;
     padding: 3px;
+    text-align: left;
+    border-radius: 5px;
+    background-color: #f7e7e8;
+    border: 5px solid #f7e7e8;
 }
 
 .OauthsignBtn:hover {
@@ -147,14 +151,14 @@ input::placeholder {
     padding-right: 5px;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"] {
+/* input[type="text"]  */
+/* input[type="email"],
+input[type="password"] {
     text-align: left;
     border-radius: 5px;
     background-color: #f7e7e8;
     border: 5px solid #f7e7e8;
-}
+} */
 
 /* .col-25 {
     float: left;

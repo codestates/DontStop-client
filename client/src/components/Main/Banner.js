@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Banner.css";
 import { useHistory } from "react-router";
 import axios from "axios";
+import { Saying } from "./Saying";
 
 function Banner() {
   const history = useHistory();
@@ -19,11 +20,28 @@ function Banner() {
       });
       //setRanks(여기서 다시받아야되나?)
       setRanks(response.data);
-      console.log(response.data);
     }
     fetchData();
   }, [apiUrl]);
-  console.log(ranks);
+
+  const quoteAPI =
+    Saying.quotes[Math.floor(Math.random() * Saying.quotes.length - 1)];
+  // // 로컬이라 cors 에러 --> 배포하고 해봐야됨 아마도?
+  // const [quotes, setQuotes] = useState([]);
+  // const quoteUrl = `https://api.adviceslip.com/advice`;
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await axios.get(quoteUrl, {
+  //       headers: {
+  //         credentials: "include",
+  //         withCredentials: true,
+  //       },
+  //     });
+  //     setQuotes(response.data);
+  //     console.log(response);
+  //   }
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="banner">
@@ -31,9 +49,7 @@ function Banner() {
         <div className="banner__title">
           <h1>Don't Stop!</h1>
           <div className="banner__content">
-            <h5>
-              To follow, without halt, one aim: There's the secret of success.
-            </h5>
+            <h5>{Object.values(quoteAPI.quote)}</h5>
           </div>
           <div className="banner__Search">
             <button
@@ -66,7 +82,15 @@ function Banner() {
             ))}
           </div>
           <div className="banner__userInfos">
-            <div className="banner__userInfo">{ranks}</div>
+            {/* <div className="banner__userInfo">{Object.values(ranks)}</div> */}
+            {Object.values(ranks).map((rank, idx) => {
+              return (
+                //리턴해야됨,,,
+                <div className="banner__userInfo" rank={rank} key={idx}>
+                  {rank}
+                </div>
+              );
+            })}
           </div>
         </div>
         {/* <div className="banner__rank"> */}
