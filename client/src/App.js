@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
 } from "react-router-dom";
 import Main from "./pages/Main";
 import SignInPage from "./pages/SignInPage";
@@ -16,44 +16,42 @@ import Grouppage1 from "./pages/Grouppage1";
 import Login from "./components/SignInUp/Login";
 
 const App = () => {
+  const isLogin = useSelector(
+    (state) => state.loginStatusReducer.loginStatus.loginStatus
+  );
 
-    const isLogin = useSelector(
-        (state) => state.loginStatusReducer.loginStatus.loginStatus
-    );
-    console.log(isLogin);
-    return (
-        <>
-            <Router>
-                <Switch>
-                    <Route path="/" exact>
-                        <Main isLogin={isLogin} />
-                    </Route>
-                    <Route component={Mypage} path="/mypage" />
-                    <Route component={SignInPage} path="/login" />
-                    <Route component={SignUpPage} path="/signup" />
-                    <Route component={StudySearch} path="/search" />
-                    <Route component={UserInfo} path="/info" />
-                    <Route component={Grouppage1} path="/list" />
-                </Switch>
-            </Router>
-            {/* <Route component={Login} path="/loginlogin" /> */}
-        </>
-    );
+  return (
+    <>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Main isLogin={isLogin} />
+          </Route>
+          <Route component={Mypage} path="/mypage" />
+          <Route component={SignInPage} path="/login" />
+          <Route component={SignUpPage} path="/signup" />
+          <Route component={StudySearch} path="/search" />
+          <Route component={UserInfo} path="/info" />
+          <Route component={Grouppage1} path="/list" />
+        </Switch>
+      </Router>
+      {/* <Route component={Login} path="/loginlogin" /> */}
+    </>
+  );
 
-    //   return (
-    //     <>
-    //       <Route component={Main} path="/" exact />
-    //       <Route component={Mypage} path="/mypage" />
-    //       <Route component={SignInPage} path="/login" />
-    //       <Route component={SignUpPage} path="/signup" />
-    //       <Route component={StudySearch} path="/search" />
-    //       <Route component={UserInfo} path="/info" />
-    //       <Route component={Grouppage} path="/list" />
-    //     </>
-    //   );
+  //   return (
+  //     <>
+  //       <Route component={Main} path="/" exact />
+  //       <Route component={Mypage} path="/mypage" />
+  //       <Route component={SignInPage} path="/login" />
+  //       <Route component={SignUpPage} path="/signup" />
+  //       <Route component={StudySearch} path="/search" />
+  //       <Route component={UserInfo} path="/info" />
+  //       <Route component={Grouppage} path="/list" />
+  //     </>
+  //   );
 
-    // };
-
+  // };
 };
 export default App;
 

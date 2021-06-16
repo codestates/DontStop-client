@@ -25,7 +25,7 @@ function Post({ title, contents, id, count }) {
           },
         }
       )
-      .then((res) => console.log(res));
+      .then((res) => res);
   };
 
   //글자 너무 길면 뒤에 '...' 처리
