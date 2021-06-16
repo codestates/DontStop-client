@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUserInfo, toggleLoginStatus } from "../../actions";
 
 function Header({ isLogin }) {
   const dispatch = useDispatch();
-  const loginstatus = useSelector(
-    (state) => state.loginStatusReducer.loginStatus.loginStatus
-  );
-  const userInfo = useSelector((state) => state.userInfoReducer);
 
   const logoutHandler = () => {
     dispatch(toggleLoginStatus(false));
