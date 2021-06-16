@@ -1,20 +1,10 @@
 .grouppost-main {
-<<<<<<< HEAD
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   background-image: url("../../img/grouppagewallpaper.jpg");
   background-size: cover;
-=======
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../img/grouppagewallpaper.jpg");
-    background-size: cover;
->>>>>>> b98bf865d68878cc22fe00344d5060eb55544b9d
-
   /* text-align: center;
     justify-content: center;
     background-color: green;
@@ -106,58 +96,52 @@
 }
 
 .pppost:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-    50% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
 }
 
 .group_userinfo {
-    width: 50%;
-    height: 50px;
+  width: 50%;
+  height: 50px;
 }
 
 .userimg {
-    width: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
-    position: absolute;
+  width: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
 }
 
 .user_name {
-    width: 150px;
-    margin-left: 50px;
-    margin-top: 15px;
-    font-weight: bold;
+  width: 150px;
+  margin-left: 50px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .user_name a {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .pppost-title {
-<<<<<<< HEAD
+}
+
+.pppost-title {
   width: 200px;
   height: 50px;
   margin-left: 20px;
   font-size: 23px;
   font-weight: bold;
   /* background-color: gray; */
-=======
-    width: 200px;
-    height: 50px;
-    margin-left: 20px;
-    font-size: 23px;
-    font-weight: bold;
-    /* background-color: gray; */
->>>>>>> b98bf865d68878cc22fe00344d5060eb55544b9d
 }
 
 .pppost-content {
@@ -171,13 +155,8 @@
 }
 
 .date {
-<<<<<<< HEAD
   margin-left: 170px;
   margin-bottom: 10px;
-=======
-    margin-left: 170px;
-    margin-bottom: 10px;
->>>>>>> b98bf865d68878cc22fe00344d5060eb55544b9d
 }
 /* .publishedAt {
     width: 200px;
