@@ -9,8 +9,6 @@ function GroupPost({ title, contents, username, date }) {
   console.log("date", date);
 
   return (
-    // <div className="grouppost-main">
-    //     <div className="space">
     <div className="pppost">
       <div className="group_userinfo">
         <img className="userimg" src="img/DOGE.png" alt="" />
@@ -23,8 +21,6 @@ function GroupPost({ title, contents, username, date }) {
       <div className="pppost-content">{contents}</div>
       <div className="date">{date.slice(5, 10)}</div>
     </div>
-    //     </div>
-    // </div>
   );
 }
 export default GroupPost;
