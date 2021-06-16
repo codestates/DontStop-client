@@ -11,8 +11,7 @@ function GroupPost({ title, contents }) {
         //     <div className="space">
         <div className="pppost">
             <div className="pppost-title">{title}</div>
-            <div>{contents}</div>
-            <div className="pppost-content"></div>
+            <div className="pppost-content">{contents}</div>
         </div>
         //     </div>
         // </div>

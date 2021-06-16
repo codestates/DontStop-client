@@ -638,10 +638,9 @@ const UserInfo = (props) => {
           >
             이유림
           </span>
+
         </div>
-      </footer>
-    </div>
-  );
+    );
 };
 
 export default UserInfo;

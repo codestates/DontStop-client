@@ -5,6 +5,7 @@ import "./Mypage.css";
 import Footer from "../components/Main/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserInfo, toggleLoginStatus } from "../actions";
+import { Saying } from "../components/Main/Saying";
 
 const MyPage = (props) => {
   const dispatch = useDispatch();
@@ -79,20 +80,38 @@ const MyPage = (props) => {
     // 1초에 1000 으로 뜸
     setTime(0);
     setStartBtn(false);
+
     // console.log("타임: ", time);
-    await axios.post(
-      "http://localhost:4000/users/time",
-      {
-        time: time / 1000,
-      },
-      {
-        headers: {
-          "content-type": "application/json",
-          //   withCredentials: true,
-          Authorization: `Bearer ${token}`,
+//     await axios.post(
+//       "http://localhost:4000/users/time",
+//       {
+//         time: time / 1000,
+//       },
+//       {
+//         headers: {
+//           "content-type": "application/json",
+//           //   withCredentials: true,
+//           Authorization: `Bearer ${token}`,
+
+    console.log("타임: ", time);
+    const res = await axios
+      .post(
+        "http://localhost:4000/users/time",
+        {
+          time: time / 1000,
+
         },
-      }
-    );
+        {
+          headers: {
+            withCredentials: true,
+            Authorization: `Bearer ${props.token}`,
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      });
+    console.log(res);
   };
 
   let acc_time = axios
@@ -155,23 +174,15 @@ const MyPage = (props) => {
 
   // -------------------------------------------------------------------
 
-  // API 받아와보자
-  // const [quote, setQuote] = useState("");
-  // const getQuotes = () => {
-  //   const randomQuotes = `https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json`;
-  //   let allQuotes = axios
-  //     .get(randomQuotes)
-  //     .then((data) => {
-  //       // console.log("명언:", data);
-  //       let quoteData = data.data.quotes;
-  //       let randomNum = Math.floor(Math.random() * quoteData.length);
-  //       let randomQuote = data.data.quotes[randomNum];
+
 
   //       setQuote(randomQuote.quote);
   //     })
   //     .catch((err) => console.log("명언에러: ", err));
   // };
-
+  const quoteAPI =
+    Saying.quotes[Math.floor(Math.random() * Saying.quotes.length - 1)];
+  console.log(quoteAPI);
   // const [quote, setQuote] = useState("");
   // const getQuotes = () => {
   //   const randomQuotes = "https://type.fit/api/quotes";
@@ -230,7 +241,9 @@ const MyPage = (props) => {
         </Link>
       </div>
       <div id="container1">
-        <button className="name1"></button>
+
+        <button className="name1">{Object.values(quoteAPI.quote)}</button>
+
         <div id="timer1">
           <div className="this_week">
             <span className="week1">이번주 나의 스터디</span>

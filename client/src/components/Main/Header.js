@@ -10,9 +10,6 @@ function Header({ isLogin }) {
     (state) => state.loginStatusReducer.loginStatus.loginStatus
   );
   const userInfo = useSelector((state) => state.userInfoReducer);
-  console.log(loginstatus);
-  console.log(userInfo);
-  console.log(isLogin);
 
   const logoutHandler = () => {
     dispatch(toggleLoginStatus(false));

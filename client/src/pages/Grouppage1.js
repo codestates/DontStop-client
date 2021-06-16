@@ -25,8 +25,6 @@ const Grouppage1 = () => {
     }, []);
     console.log("groupposts잘들어옴", groupposts);
 
-    const mapping = () => {};
-
     return (
         <>
             <StudyHeader></StudyHeader>
@@ -42,7 +40,9 @@ const Grouppage1 = () => {
                     })}
                 </div>
             </div>
-            <Footer></Footer>
+            <div className="group_footer">
+                <Footer></Footer>
+            </div>
         </>
     );
 };

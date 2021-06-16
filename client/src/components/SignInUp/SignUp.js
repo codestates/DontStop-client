@@ -1,67 +1,71 @@
-import React, { Component, useState } from "react";
-import { useHistory } from "react-router-dom";
-import "./SignUp.css";
-import { Link } from "react-router-dom";
+
+
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
 import OauthSign from "../../pages/OauthSign";
 import axios from "axios";
+import "./SignUp.css";
 
-const SignUp = () => {
-  const history = useHistory();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+axios.defaults.withCredentials = true;
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
+class SignUp extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: "",
+            password: "",
+            name: "",
+        };
+        this.handleInputValue = this.handleInputValue.bind(this);
+    }
 
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+    handleInputValue = (key) => (e) => {
+        this.setState({ [key]: e.target.value });
+        console.log("key", key);
+    };
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
+    handleSignup = () => {
+        const { email, password, name } = this.state;
+        axios
+            .post(
+                "http://localhost:4000/users/signup",
+                {
+                    email,
+                    password,
+                    name,
+                },
+                { headers: { "Content-Type": "application/json" } }
+            )
+            .then(() =>
+                //  console.log(this.state.email)
+                this.props.history.push("/login")
+            );
+    };
 
-  const handleClick = (e) => {
-    e.preventDefault();
+    // 1. input에  email, username, password를 넣고
+    // 2. button을 클릭하면 post 요청보내기
 
-    axios.post(
-      "http://localhost:4000/users/signup",
-      {
-        email: email,
-        password: password,
-        name: name,
-      },
-      {
-        headers: {
-          "content-type": "application/json",
-          withCredentials: true,
-        },
-      }
-    );
-    history.push("/login");
-  };
+    render() {
+        return (
+            <div className="signupMain">
+                <div className="Signupwarp">
+                    <div class="tab-header">
+                        <div class="active">Sign Up</div>
+                        <div class="inactive">
+                            <Link
+                                to="/login"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "black",
+                                }}
+                            >
+                                Sign In
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="OauthsignupBtnwrap">
+                        {/* <button className="OauthsignupBtn">
 
-  return (
-    <div className="signupMain">
-      <div className="Signupwarp">
-        <div class="tab-header">
-          <div class="active">Sign Up</div>
-          <div class="inactive">
-            <Link
-              to="/login"
-              style={{
-                textDecoration: "none",
-                color: "black",
-              }}
-            >
-              Sign In
-            </Link>
-          </div>
-        </div>
-        <div className="OauthsignupBtnwrap">
-          {/* <button className="OauthsignupBtn">
                             <img
                                 src="img/googleLogo.png"
                                 alt="logo"
@@ -69,71 +73,82 @@ const SignUp = () => {
                             />
                             Google
                         </button> */}
-          <OauthSign className="OauthsignBtn"></OauthSign>
-        </div>
-        <div className="oneline">
-          <hr
-            style={{
-              backgroundColor: "#F2F2F2",
-              width: 175,
-              marginBottom: 40,
-              marginRight: 10,
-            }}
-          />
-          or
-          <hr
-            style={{
-              backgroundColor: "#F2F2F2",
-              width: 175,
-              marginBottom: 40,
-              marginLeft: 10,
-            }}
-          />
-        </div>
-        <div className="signupinputField">
-          {/* <div className='col-25'>이메일</div> */}
-          <input
-            name="emailSignup"
-            type="email"
-            className="Signupinput"
-            placeholder="Email"
-            onChange={handleEmail}
-          />
-        </div>
-        <div className="signupinputField">
-          {/* <div className='col-25'>비밀번호</div> */}
-          <input
-            name="password"
-            type="password"
-            className="Signupinput"
-            minlength="8"
-            maxLength="16"
-            placeholder="Password"
-            onChange={handlePassword}
-          />
-        </div>
-        <div className="signupinputField">
-          {/* <div className='col-25'>이름</div> */}
-          <input
-            name="name"
-            type="text"
-            className="Signupnameinput"
-            // className="col-75"
-            placeholder="Username"
-            onChange={handleName}
-          />
-        </div>
-        <div className="SignupBtnwrap">
-          <input
-            type="submit"
-            className="SignupBtn"
-            value="가입하기"
-            onClick={handleClick}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default SignUp;
+                        <OauthSign className="OauthsignBtn"></OauthSign>
+                    </div>
+                    <div className="oneline">
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 40,
+                                marginRight: 10,
+                            }}
+                        />
+                        or
+                        <hr
+                            style={{
+                                backgroundColor: "#F2F2F2",
+                                width: 175,
+                                marginBottom: 40,
+                                marginLeft: 10,
+                            }}
+                        />
+                    </div>
+                    <div className="signupinputField">
+                        <input
+                            // name="emailSignup"
+                            // value={this.state.email}
+                            type="email"
+                            className="Signupinput"
+                            placeholder="Email"
+                            onChange={this.handleInputValue("email")}
+                        />
+                    </div>
+                    <div className="signupinputField">
+                        <input
+                            // name="password"
+                            // value={this.state.password}
+                            // minlength="8"
+                            // maxLength="16"
+                            type="password"
+                            className="Signupinput"
+                            placeholder="Password"
+                            onChange={this.handleInputValue("password")}
+                        />
+                    </div>
+                    <div className="signupinputField">
+                        <input
+                            // name="name"
+                            // value={this.state.name}
+                            // className="col-75"
+                            type="text"
+                            className="Signupnameinput"
+                            placeholder="Username"
+                            onChange={this.handleInputValue("name")}
+                        />
+                    </div>
+                    <div className="SignupBtnwrap">
+                        <button
+                            className="SignupBtn"
+                            type="submit"
+                            onClick={this.handleSignup}
+                        >
+                            회원가입
+                        </button>
+                        {/* <input
+                            type="submit"
+                            className="SignupBtn"
+                            value="가입하기"
+                            onClick={SignupHandler}
+                        /> */}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+export default withRouter(SignUp);
+// export default SignUp;
