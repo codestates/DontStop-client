@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./UserInfo.css";
 //import Footer from "../components/Main/Footer";
 import InfoHeader from "../components/Main/InfoHeader";
 import axios from "axios";
+import { useSelector } from "react-redux";
+
 axios.defaults.withCredentials = true;
 
 const UserInfo = (props) => {
+    const [usersss, setUsersss] = useState();
+    console.log("userss", usersss);
+
+    const token = useSelector(
+        (state) => state.userInfoReducer.userInfo.accessToken
+    );
+    // console.log('token',token);
+
     // ToDos
     // 그룹이름, 이름, 이메일은 바꿀 수 없게 만들어 놓아야 하므로 고정!
     // 그룹이름을 어디서 가져오지?
@@ -26,7 +36,6 @@ const UserInfo = (props) => {
   1. CSS => 못해먹겠다...
   
  */
-
     const history = useHistory();
 
     // 비밀번호만 수정 가능하게 만들어야 함!!
@@ -41,16 +50,52 @@ const UserInfo = (props) => {
     //   };
 
     // 일단 정보를 서버로부터 받아서 띄워주기
-    let userInfo = axios.get("http://localhost:4000/users/info").then((res) => {
-        console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
-        return res;
-    });
+    // *********useEffect*********
+    // useEffect(() => {
+    //     async function userInfo() {
+    //         const res = await axios.get("http://localhost:4000/users/info", {
+    //             headers: { Authorization: `Bearer ${token}` },
+    //         });
+    //         setUsersss(res);
+    //         // console.log("res", res);
+    //     }
+    //     userInfo();
+    // });
+    // console.log("users", usersss);
+    // console.log("infotoken", token);
 
-    console.log("userInfo머니: ", userInfo);
+    // => 500상태코드를 받아서 이걸 해결하면 res를 볼수있을거 같다!
+
+    // ********수정코드1*********
+    // const userInfo = async () => {
+    //     let getUserInfo = await axios
+    //         .get("http://localhost:4000/users/info", {
+    //             headers: {
+    //                 Authorization: `Bearer ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             console.log("와디즈 레스: ", res); // 이름, 이메일이 받아와져야 함
+    //             // return res;
+    //         });
+    //     console.log("userInfo머니: ", userInfo);
+    // };
+
+    // ********초기코드*********
+    // let userInfo = axios
+    //     .get("http://localhost:4000/users/info", {
+    //         headers: { Authorization: `Bearer ${token}` },
+    //     })
+    //     .then((res) => {
+    //         console.log("와디즈 레스: ", res); // 그룹이름, 이름, 이메일이 받아와져야 함
+    //         return res;
+    //     });
+
+    // console.log("userInfo머니: ", userInfo);
 
     const handlePassword = (e) => {
         //  console.log("타겟: ", e.target);
-        //  console.log("타겟벨류", e.target.value);
+        //  console.log("타겟벨류", e.target.value);d
         setPassword(e.target.value);
     };
 
@@ -76,6 +121,7 @@ const UserInfo = (props) => {
             password === validatePassword
         ) {
             alert("비밀번호가 성공적으로 변경되었습니다.");
+            // console.log("비번", token);
             axios.post(
                 "http://localhost:4000/users/info",
                 {
@@ -85,6 +131,7 @@ const UserInfo = (props) => {
                     headers: {
                         "content-type": "application/json",
                         withCredentials: true,
+                        Authorization: `Bearer ${token}`,
                     },
                 }
             );
@@ -110,7 +157,7 @@ const UserInfo = (props) => {
                     <input
                         className="userName2"
                         type="text"
-                        value="{props.userInfo.name}"
+                        value="{userInfo.title}"
                         readOnly
                     ></input>
                 </label>
@@ -119,7 +166,7 @@ const UserInfo = (props) => {
                     <input
                         className="email2"
                         type="text"
-                        value="{props.userInfo.email}"
+                        value="{userInfo.data}"
                         readOnly
                     ></input>
                 </label>
