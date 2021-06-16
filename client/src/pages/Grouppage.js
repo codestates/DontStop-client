@@ -24,7 +24,7 @@ const Grouppage = () => {
     fetchData();
   }, []);
   console.log("groupposts잘들어옴", groupposts);
-  //ddd
+  //dddasdf
   return (
     <>
       <StudyHeader></StudyHeader>
