@@ -16,6 +16,7 @@ import Grouppage1 from "./pages/Grouppage1";
 import Login from "./components/SignInUp/Login";
 
 const App = () => {
+
     const isLogin = useSelector(
         (state) => state.loginStatusReducer.loginStatus.loginStatus
     );
@@ -52,6 +53,7 @@ const App = () => {
     //   );
 
     // };
+
 };
 export default App;
 
