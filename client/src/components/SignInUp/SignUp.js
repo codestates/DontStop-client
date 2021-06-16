@@ -1,17 +1,47 @@
 import React, { Component } from "react";
-import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import OauthSign from "../../pages/OauthSign";
+import axios from "axios";
+import "./SignUp.css";
+
+axios.defaults.withCredentials = true;
 
 class SignUp extends Component {
     constructor(props) {
         super(props);
-        this.setState = {
+        this.state = {
             email: "",
             password: "",
             name: "",
         };
+        this.handleInputValue = this.handleInputValue.bind(this);
     }
+
+    handleInputValue = (key) => (e) => {
+        this.setState({ [key]: e.target.value });
+        console.log("key", key);
+    };
+
+    handleSignup = () => {
+        const { email, password, name } = this.state;
+        axios
+            .post(
+                "http://localhost:4000/users/signup",
+                {
+                    email,
+                    password,
+                    name,
+                },
+                { headers: { "Content-Type": "application/json" } }
+            )
+            .then(() =>
+                //  console.log(this.state.email)
+                this.props.history.push("/login")
+            );
+    };
+
+    // 1. input에  email, username, password를 넣고
+    // 2. button을 클릭하면 post 요청보내기
 
     render() {
         return (
@@ -62,41 +92,52 @@ class SignUp extends Component {
                         />
                     </div>
                     <div className="signupinputField">
-                        {/* <div className='col-25'>이메일</div> */}
                         <input
-                            name="emailSignup"
+                            // name="emailSignup"
+                            // value={this.state.email}
                             type="email"
                             className="Signupinput"
                             placeholder="Email"
+                            onChange={this.handleInputValue("email")}
                         />
                     </div>
                     <div className="signupinputField">
-                        {/* <div className='col-25'>비밀번호</div> */}
                         <input
-                            name="password"
+                            // name="password"
+                            // value={this.state.password}
+                            // minlength="8"
+                            // maxLength="16"
                             type="password"
                             className="Signupinput"
-                            minlength="8"
-                            maxLength="16"
                             placeholder="Password"
+                            onChange={this.handleInputValue("password")}
                         />
                     </div>
                     <div className="signupinputField">
-                        {/* <div className='col-25'>이름</div> */}
                         <input
-                            name="name"
+                            // name="name"
+                            // value={this.state.name}
+                            // className="col-75"
                             type="text"
                             className="Signupnameinput"
-                            // className="col-75"
                             placeholder="Username"
+                            onChange={this.handleInputValue("name")}
                         />
                     </div>
                     <div className="SignupBtnwrap">
-                        <input
+                        <button
+                            className="SignupBtn"
+                            type="submit"
+                            onClick={this.handleSignup}
+                        >
+                            회원가입
+                        </button>
+                        {/* <input
                             type="submit"
                             className="SignupBtn"
                             value="가입하기"
-                        />
+                            onClick={SignupHandler}
+                        /> */}
                     </div>
                 </div>
             </div>
@@ -104,4 +145,5 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
+// export default SignUp;
