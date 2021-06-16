@@ -3,6 +3,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-image: url("../../img/grouppagewallpaper.jpg");
+  background-size: cover;
   /* text-align: center;
     justify-content: center;
     background-color: green;
