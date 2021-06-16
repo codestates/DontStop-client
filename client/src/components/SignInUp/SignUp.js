@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import OauthSign from "../../pages/OauthSign";
@@ -148,7 +146,6 @@ class SignUp extends Component {
         );
     }
 }
-
 
 export default withRouter(SignUp);
 // export default SignUp;
