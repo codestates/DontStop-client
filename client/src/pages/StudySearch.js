@@ -5,55 +5,41 @@ import "./StudySearch.css";
 import Footer from "../components/Main/Footer";
 import Button from "../components/StudySearch/Button";
 import axios from "axios";
-
+import { useSelector } from "react-redux";
+axios.defaults.withCredentials = true;
 function StudySearch() {
   const [posts, setPosts] = useState([]);
   const searchUrl = "http://localhost:4000/groups/search";
-
+  const token = useSelector(
+    (state) => state.userInfoReducer.userInfo.accessToken
+  );
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(
-        searchUrl,
-        {
-          headers: {},
+      const response = await axios.get(searchUrl, {
+        headers: {
+          authorization: `Bearer ${token}`,
         },
-        {
-          withCredentials: true,
-        }
-      );
-      setPosts(response.data.data);
-      console.log(response);
+      });
+      setPosts(response.data);
     }
     fetchData();
-  }, [searchUrl]);
-  console.log(posts);
+  }, []);
 
   return (
     <>
       <StudyHeader />
-      <Button />
+      <Button token={token} />
       <div className="studySearch__main">
         <div className="studySearch">
-          {posts &&
-            posts.map((post, idx) => (
-              <Post key={idx} title={post?.title} contents={post?.contents} />
-            ))}
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          {Object.values(posts).map((post, idx) => (
+            <Post
+              key={idx}
+              title={post?.title}
+              contents={post?.contents}
+              id={post?.id}
+              count={post?.count}
+            />
+          ))}
         </div>
       </div>
       <Footer />
