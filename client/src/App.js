@@ -16,11 +16,9 @@ import Grouppage from "./pages/Grouppage";
 import Login from "./components/SignInUp/Login";
 
 const App = () => {
-
   const isLogin = useSelector(
     (state) => state.loginStatusReducer.loginStatus.loginStatus
   );
-  console.log(isLogin);
   return (
     <>
       <Router>
@@ -51,7 +49,6 @@ const App = () => {
   //       <Route component={Grouppage} path="/list" />
   //     </>
   //   );
-
 
   // };
 };

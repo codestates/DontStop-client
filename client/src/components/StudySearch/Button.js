@@ -23,7 +23,11 @@ class Button extends Component {
       <>
         <div className="modal__btn">
           <button onClick={this.openModal}>스터디 만들기</button>
-          <Modal isOpen={this.state.isModalOpen} close={this.closeModal} />
+          <Modal
+            token={this.props.token}
+            isOpen={this.state.isModalOpen}
+            close={this.closeModal}
+          />
         </div>
       </>
     );
