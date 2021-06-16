@@ -9,7 +9,9 @@ import { Saying } from "../components/Main/Saying";
 
 const MyPage = (props) => {
   const dispatch = useDispatch();
-
+  const token = useSelector(
+    (state) => state.userInfoReducer.userInfo.accessToken
+  );
   console.log("프롭: ", props);
   /*
   ToDos
@@ -32,20 +34,20 @@ const MyPage = (props) => {
   const [startBtn, setStartBtn] = useState(false);
 
   // 이번주 공부량 서버에서 받아오기! (에러뜨네으아아ㅓ란어리ㅏ넝란어리ㅓㅏ니얼)
-  let acc_time = axios
-    .get("http://localhost:4000/users/time", {
-      headers: {
-        Authorization: `Bearer ${props.token}`,
-      },
-    })
-    .then((res) => {
-      console.log("레스: ", res);
-      return res;
-    })
-    .catch((err) => {
-      console.log("에러: ", err);
-    });
-  console.log("너는 누구십니까", acc_time);
+  // let acc_time = axios
+  //   .get("http://localhost:4000/users/time", {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   })
+  //   .then((res) => {
+  //     console.log("레스: ", res);
+  //     return res;
+  //   })
+  //   .catch((err) => {
+  //     console.log("에러: ", err);
+  //   });
+  // console.log("너는 누구십니까", acc_time);
 
   const handleStartBtn = () => {
     // 2-1. 시작버튼 누르면 일시정지로 바뀜; 일시정지 -> 시작
@@ -78,12 +80,26 @@ const MyPage = (props) => {
     // 1초에 1000 으로 뜸
     setTime(0);
     setStartBtn(false);
+
+    // console.log("타임: ", time);
+//     await axios.post(
+//       "http://localhost:4000/users/time",
+//       {
+//         time: time / 1000,
+//       },
+//       {
+//         headers: {
+//           "content-type": "application/json",
+//           //   withCredentials: true,
+//           Authorization: `Bearer ${token}`,
+
     console.log("타임: ", time);
     const res = await axios
       .post(
         "http://localhost:4000/users/time",
         {
           time: time / 1000,
+
         },
         {
           headers: {
@@ -97,6 +113,20 @@ const MyPage = (props) => {
       });
     console.log(res);
   };
+
+  let acc_time = axios
+    .get("http://localhost:4000/users/time", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      console.log("레스: ", res);
+      return res;
+    })
+    .catch((err) => {
+      console.log("에러: ", err);
+    });
 
   // ------------------------------------------------------------------------------------------------------
 
@@ -131,11 +161,12 @@ const MyPage = (props) => {
         {
           headers: {
             "content-type": "application/json",
-            withCredentials: true,
-            Authorization: `Bearer ${props.token}`,
+            // withCredentials: true,
+            Authorization: `Bearer ${token}`,
           },
         }
       );
+
       setTitle("");
       setContents("");
     }
@@ -143,17 +174,7 @@ const MyPage = (props) => {
 
   // -------------------------------------------------------------------
 
-  // // API 받아와보자
-  // const [quote, setQuote] = useState("");
-  // const getQuotes = () => {
-  //   const randomQuotes = `http://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json`;
-  //   let allQuotes = axios
-  //     .get(randomQuotes)
-  //     .then((data) => {
-  //       // console.log("명언:", data);
-  //       let quoteData = data.data.quotes;
-  //       let randomNum = Math.floor(Math.random() * quoteData.length);
-  //       let randomQuote = data.data.quotes[randomNum];
+
 
   //       setQuote(randomQuote.quote);
   //     })
@@ -220,12 +241,14 @@ const MyPage = (props) => {
         </Link>
       </div>
       <div id="container1">
+
         <button className="name1">{Object.values(quoteAPI.quote)}</button>
+
         <div id="timer1">
           <div className="this_week">
             <span className="week1">이번주 나의 스터디</span>
 
-            <div className="acc_time1">{time / 1000}분</div>
+            <div className="acc_time1">분</div>
           </div>
 
           <div className="today1">
