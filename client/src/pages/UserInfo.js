@@ -8,6 +8,7 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 const UserInfo = (props) => {
+
   // console.log("프롭: ", props);
   const token = useSelector(
     (state) => state.userInfoReducer.userInfo.accessToken
@@ -162,10 +163,9 @@ const UserInfo = (props) => {
           >
             이유림
           </span>
+
         </div>
-      </footer>
-    </div>
-  );
+    );
 };
 
 export default UserInfo;
