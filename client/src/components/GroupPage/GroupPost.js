@@ -13,7 +13,7 @@ function GroupPost({ title, contents, username, date }) {
     //     <div className="space">
     <div className="pppost">
       <div className="group_userinfo">
-        <img className="userimg" src="img/DOGE.png" alt="" />
+        <img className="userimg" src="" alt="" />
         <div className="user_name">
           <a>By </a>
           {username}
