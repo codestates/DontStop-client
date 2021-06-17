@@ -4,18 +4,6 @@ import HeaderSignin from "../components/SignInUp/HeaderSignin";
 import Footer from "../components/Main/Footer";
 import { Component } from "react";
 
-// const SignInPage = () => {
-//     return (
-//         <>
-//             <HeaderSignin />
-//             <SignIn />
-//             <Footer />
-//         </>
-//     );
-// };
-
-// export default SignInPage;
-
 class SignInPage extends Component {
     constructor(props) {
         super(props);

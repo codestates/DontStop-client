@@ -26,10 +26,7 @@ export default function OauthSign({ onSocial }) {
     };
 
     return (
-        <div
-            className="what"
-            //  style={{ backgroundColor: "pink" }}
-        >
+        <div className="what">
             <GoogleLogin
                 clientId={clientId}
                 responseType={"id_token"}
