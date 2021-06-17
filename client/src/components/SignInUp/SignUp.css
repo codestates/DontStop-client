@@ -14,7 +14,6 @@
     opacity: 0.8;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 10px;
@@ -37,7 +36,7 @@
 
 .Signupinput {
     width: 370px;
-    height: 60%;
+    height: 40px;
     padding: 3px;
     margin-left: -9px;
     justify-content: center;
@@ -54,7 +53,7 @@
     background-color: #f7e7e8;
     border: 5px solid #f7e7e8;
     width: 370px;
-    height: 60%;
+    height: 40px;
     padding: 3px;
     margin-left: -9px;
     justify-content: center;
@@ -72,12 +71,9 @@
 }
 
 .SignupBtnwrap {
-    width: 82%;
+    width: 85%;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
-    padding: 0px;
-    align-items: baseline;
-    margin-bottom: 30px;
 }
 
 .SignupBtn {
