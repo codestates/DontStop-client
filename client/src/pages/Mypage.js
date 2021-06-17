@@ -6,7 +6,7 @@ import Footer from "../components/Main/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserInfo, toggleLoginStatus } from "../actions";
 import { Saying } from "../components/Main/Saying";
-
+// import
 const MyPage = (props) => {
   const dispatch = useDispatch();
   const token = useSelector(
