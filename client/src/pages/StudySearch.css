@@ -17,42 +17,20 @@
 /* 반응형 이어서 해보기 */
 @media screen and (max-width: 1623px) {
   .studySearch {
-    /* height: 100%;
-    grid-row-gap: 5vw;
-    margin: 12rem 0;
-    display: grid; */
     grid-template-columns: repeat(3, 20vw);
-    /* justify-content: space-evenly;
-    padding: 10px; */
-    /* display: flex;
-    flex-direction: column; */
   }
 }
 
 @media screen and (max-width: 1024px) {
   .studySearch {
-    /* height: 100%; */
     grid-row-gap: 10vw;
-    /* margin: 12rem 0;
-    display: grid; */
     grid-template-columns: repeat(2, 30vw);
-    /* justify-content: space-evenly;
-    padding: 10px; */
-    /* display: flex;
-    flex-direction: column; */
   }
 }
 
 @media screen and (max-width: 768px) {
   .studySearch {
-    /* height: 100%; */
     grid-row-gap: 15vw;
-    /* margin: 12rem 0;
-    display: grid; */
     grid-template-columns: repeat(1, 30vw);
-    /* justify-content: space-evenly;
-    padding: 10px; */
-    /* display: flex;
-    flex-direction: column; */
   }
 }

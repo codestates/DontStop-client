@@ -14,12 +14,9 @@
     opacity: 0.8;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 10px;
-    /* box-shadow: 0 2px 5px 0 rgb(96 96 96 / 16%),
-        2px 10px 23px 0 rgb(96 96 96 / 13%); */
 }
 
 .tab-header {
@@ -27,8 +24,6 @@
     height: 50px;
     line-height: 50px;
     text-align: center;
-    /* background: #f7f7f8; */
-    /* border: solid 1px #f7f7f8; */
     border-radius: 10px;
     cursor: pointer;
     display: flex;
@@ -48,8 +43,6 @@
     float: left;
     color: #555;
     border: solid 1px #f7f7f8;
-
-    /* flex-direction: column; */
 }
 
 .active {
@@ -60,11 +53,13 @@
     display: grid;
     float: left;
     color: #555;
-    /* flex-direction: column; */
 }
 
+.Signin_inputwrap {
+    height: 150px;
+    margin-bottom: -6px;
+}
 .inputField {
-    /* width: 100%; */
     height: 50px;
     padding: 5px;
     display: table;
@@ -78,16 +73,11 @@
     height: 80px;
     padding: 5px;
     margin-top: 20px;
-    /* margin-bottom: 10px; */
     display: table;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-
-/* input::placeholder {
-    font-size: small;
-} */
 
 .SigninBtnwrap {
     width: 85%;
@@ -105,17 +95,6 @@
     border-radius: 3px;
 }
 
-/* .OauthsignBtn {
-    margin-top: 50px;
-    width: 100%;
-    height: 50px;
-    color: #a1a8ae;
-    vertical-align: middle;
-    background-color: #9725a9;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-} */
-
 .what:hover {
     background-color: #e0e0e0;
     border-radius: 2.5px;
@@ -132,7 +111,7 @@
 
 .Signininput {
     width: 380px;
-    height: 60%;
+    height: 40px;
     padding: 3px;
     text-align: left;
     border-radius: 5px;
@@ -149,23 +128,3 @@
     width: 20px;
     padding-right: 5px;
 }
-
-/* input[type="text"]  */
-/* input[type="email"],
-input[type="password"] {
-    text-align: left;
-    border-radius: 5px;
-    background-color: #f7e7e8;
-    border: 5px solid #f7e7e8;
-} */
-
-/* .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
-
-.col-75 {
-    width: 90%;
-    margin-top: 6px;
-} */

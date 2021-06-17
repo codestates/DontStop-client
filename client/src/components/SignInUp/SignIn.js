@@ -18,7 +18,7 @@ export default function SignIn() {
         accessToken: "",
         loginStatus: true,
     });
-    ///sdf
+
     const emailHandler = (e) => {
         setEmail(e.target.value);
     };
@@ -47,15 +47,6 @@ export default function SignIn() {
             });
         history.push("/");
     };
-    //   const loginClick = async () => {
-    //     const token = await createToken();
-    //     console.log("token", token);
-    //   };
-
-    //   console.log("signIn", signIn);
-
-    //     dispatch(setUserInfo(res.data));
-    // };
 
     return (
         <div className="signinMain">
@@ -98,23 +89,25 @@ export default function SignIn() {
                         }}
                     />
                 </div>
-                <div className="inputField">
-                    <input
-                        type="email"
-                        value={email}
-                        className="Signininput"
-                        placeholder="Email"
-                        onChange={emailHandler}
-                    />
-                </div>
-                <div className="inputField">
-                    <input
-                        type="password"
-                        value={password}
-                        className="Signininput"
-                        placeholder="Password"
-                        onChange={passwordHandler}
-                    />
+                <div className="Signin_inputwrap">
+                    <div className="inputField">
+                        <input
+                            type="email"
+                            value={email}
+                            className="Signininput"
+                            placeholder="Email"
+                            onChange={emailHandler}
+                        />
+                    </div>
+                    <div className="inputField">
+                        <input
+                            type="password"
+                            value={password}
+                            className="Signininput"
+                            placeholder="Password"
+                            onChange={passwordHandler}
+                        />
+                    </div>
                 </div>
                 <div className="SigninBtnwrap">
                     <button className="SigninBtn" onClick={loginHandler}>
