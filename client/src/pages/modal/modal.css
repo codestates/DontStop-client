@@ -1,0 +1,111 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__studySearch {
+  width: 480px;
+  height: 521px;
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 10px;
+  animation: modal-bg-show 0.4s;
+}
+
+.modal__name {
+  color: #9725a9;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.modal__close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.modal__Contents {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: 30px 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal__title {
+  margin-top: 20px;
+  border-radius: 2px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+textarea::placeholder {
+  color: #999999;
+}
+
+input::placeholder {
+  color: #999999;
+}
+
+.modal__content {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #e5e5e5;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  resize: none;
+}
+
+.modal__emt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__insert {
+  height: 40px;
+  font-size: 15px;
+  padding: 13px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #9725a9;
+  line-height: 1px;
+  margin-top: 7rem;
+  border-radius: 10px;
+  border-color: #9725a9;
+}
+
+.modal__insert:hover {
+  transition: all 0.3s;
+  background-color: #9725a9;
+  border-color: #9725a9;
+  color: white;
+}
+
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}

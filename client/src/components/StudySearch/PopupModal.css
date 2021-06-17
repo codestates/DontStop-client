@@ -1,0 +1,74 @@
+.popup__modal {
+  position: fixed;
+  top: 10rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.popup__main {
+  width: 480px;
+  height: 300px;
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  overflow: hidden;
+  animation: modal-bg-show 0.4s;
+}
+
+.popup__name {
+  color: #9725a9;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.popup__close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+  color: #9725a9;
+}
+
+.popup__Contents {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  padding: 30px 20px 32px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.popup__insert {
+  height: 40px;
+  font-size: 15px;
+  padding: 13px 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #9725a9;
+  line-height: 1px;
+  margin-top: 7rem;
+  border-radius: 10px;
+  border-color: #9725a9;
+}
+
+.popup__insert:hover {
+  transition: all 0.3s;
+  background-color: #9725a9;
+  border-color: #9725a9;
+  color: white;
+}
+
+@keyframes modal-bg-show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 2;
+  }
+}

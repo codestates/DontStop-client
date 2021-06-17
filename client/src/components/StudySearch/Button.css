@@ -1,0 +1,25 @@
+.modal__btn {
+  position: absolute;
+  top: 14rem;
+  left: 1;
+  right: 12rem;
+}
+
+.modal__btn > button {
+  background-color: transparent;
+  background-image: none;
+  height: 40px;
+  width: 150%;
+  color: #9725a9;
+  border-radius: 10px;
+  border-color: #9725a9;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.modal__btn > button:hover {
+  color: white;
+  background-color: #9725a9;
+  border-color: #9725a9;
+  transition: all 0.5s;
+}
