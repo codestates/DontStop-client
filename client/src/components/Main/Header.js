@@ -71,29 +71,6 @@ function Header({ isLogin }) {
       </RightMenu>
     </Container>
   );
-  {
-    /* <RightMenu>
-                <Link
-                    to="./login"
-                    style={{
-                        textDecoration: "none",
-                        color: "white",
-                    }}
-                >
-                    <p>로그인</p>
-                </Link>
-                
-                <Link
-                    to="./signup"
-                    style={{
-                        textDecoration: "none",
-                        color: "white",
-                    }}
-                >
-                    <p>회원가입</p>
-                </Link>
-            </RightMenu> */
-  }
 }
 
 export default Header;

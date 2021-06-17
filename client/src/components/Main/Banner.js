@@ -9,7 +9,6 @@ function Banner() {
 
   const imgs = ["./img/gold.png", "./img/silver.png", "./img/bronze.png"];
 
-  // 응답 메세지 출력은 됐는데 3개 받아온건 어케뿌리지? 훅은 어려워
   const [ranks, setRanks] = useState([]);
   const apiUrl = "http://localhost:4000/users/rank";
 
@@ -95,14 +94,6 @@ function Banner() {
             })}
           </div>
         </div>
-        {/* <div className="banner__rank"> */}
-        {/* <img className="banner__userImg" src="./img/silver.png" alt=""></img>
-          <div className="banner__userInfo">나원빈</div>
-        </div>
-        <div className="banner__rank"> */}
-        {/* <img className="banner__userImg" src="./img/bronze.png" alt=""></img>
-          <div className="banner__userInfo">나원빈</div>
-        </div> */}
       </div>
       <div className="banner--fadeBottom" />
     </div>
