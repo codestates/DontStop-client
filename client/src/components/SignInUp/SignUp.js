@@ -62,16 +62,6 @@ class SignUp extends Component {
                         </div>
                     </div>
                     <div className="OauthsignupBtnwrap">
-                        {/* <button className="OauthsignupBtn">
-
-                            <img
-                                src="img/googleLogo.png"
-                                alt="logo"
-                                className="google"
-                            />
-                            Google
-                        </button> */}
-
                         <OauthSign className="OauthsignBtn"></OauthSign>
                     </div>
                     <div className="oneline">
@@ -95,8 +85,6 @@ class SignUp extends Component {
                     </div>
                     <div className="signupinputField">
                         <input
-                            // name="emailSignup"
-                            // value={this.state.email}
                             type="email"
                             className="Signupinput"
                             placeholder="Email"
@@ -105,10 +93,6 @@ class SignUp extends Component {
                     </div>
                     <div className="signupinputField">
                         <input
-                            // name="password"
-                            // value={this.state.password}
-                            // minlength="8"
-                            // maxLength="16"
                             type="password"
                             className="Signupinput"
                             placeholder="Password"
@@ -117,9 +101,6 @@ class SignUp extends Component {
                     </div>
                     <div className="signupinputField">
                         <input
-                            // name="name"
-                            // value={this.state.name}
-                            // className="col-75"
                             type="text"
                             className="Signupnameinput"
                             placeholder="Username"
@@ -134,12 +115,6 @@ class SignUp extends Component {
                         >
                             회원가입
                         </button>
-                        {/* <input
-                            type="submit"
-                            className="SignupBtn"
-                            value="가입하기"
-                            onClick={SignupHandler}
-                        /> */}
                     </div>
                 </div>
             </div>

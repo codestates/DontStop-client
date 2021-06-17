@@ -36,7 +36,7 @@ const Grouppage = () => {
                                 title={el.title}
                                 contents={el.contents}
                                 username={el.user_name}
-                                date={el.updatedAt}
+                                date={el.createdAt}
                             />
                         );
                     })}
