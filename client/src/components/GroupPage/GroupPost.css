@@ -1,140 +1,139 @@
 .grouppost-main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-image: url("../../img/grouppagewallpaper.jpg");
-    background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../img/grouppagewallpaper.jpg");
+  background-size: cover;
 }
 /* -> classname 중복되면 안된다.  */
 
 .space {
-    height: 100%;
-    grid-row-gap: 5vw;
-    display: grid;
-    grid-template-columns: repeat(3, 15vw);
-    justify-content: space-evenly;
-    padding: 10px;
-    margin: 12rem 0;
-    flex-wrap: wrap;
+  height: 100%;
+  grid-row-gap: 5vw;
+  display: grid;
+  grid-template-columns: repeat(3, 15vw);
+  justify-content: space-evenly;
+  padding: 10px;
+  margin: 12rem 0;
+  flex-wrap: wrap;
 }
 
 .pppost {
-    justify-content: center;
-    width: 15rem;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: #f7e7e8;
-    margin-right: 16px;
-    overflow: hidden;
-    opacity: 0.85;
+  justify-content: center;
+  width: 15rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #f7e7e8;
+  margin-right: 16px;
+  overflow: hidden;
+  opacity: 0.85;
 }
 
 .pppost:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-    50% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
 }
-
 .group_userinfo {
-    width: 50%;
-    height: 50px;
+  width: 50%;
+  height: 50px;
 }
 
 .userimg {
-    width: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
-    position: absolute;
+  width: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
 }
 
 .user_name {
-    width: 150px;
-    margin-left: 50px;
-    margin-top: 15px;
-    font-weight: bold;
+  width: 150px;
+  margin-left: 50px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .user_name a {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .pppost:hover {
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-    50% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
 }
 
 .group_userinfo {
-    width: 50%;
-    height: 50px;
+  width: 50%;
+  height: 50px;
 }
 
 .userimg {
-    width: 40px;
-    margin-top: 5px;
-    margin-left: 5px;
-    position: absolute;
+  width: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
 }
 
 .user_name {
-    width: 150px;
-    margin-left: 50px;
-    margin-top: 15px;
-    font-weight: bold;
+  width: 150px;
+  margin-left: 50px;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .user_name a {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .pppost-title {
-    width: 200px;
-    height: 50px;
-    margin-left: 20px;
-    font-size: 23px;
-    font-weight: bold;
+  width: 200px;
+  height: 50px;
+  margin-left: 20px;
+  font-size: 23px;
+  font-weight: bold;
 }
 
 .pppost-content {
-    width: 200px;
-    height: 200px;
-    margin-left: 20px;
-    border-radius: 5px;
-    overflow: auto;
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  border-radius: 5px;
+  overflow: auto;
 }
 
 .date {
-    margin-left: 170px;
-    margin-bottom: 10px;
+  margin-left: 170px;
+  margin-bottom: 10px;
 }
 
 .userId,
 .publishedAt {
-    width: 150px;
-    height: 70px;
-    color: wheat;
-    text-align: left;
-    border-radius: 5px;
-    background-color: #ffffff;
-    border: 5px solid #ffffff;
+  width: 150px;
+  height: 70px;
+  color: wheat;
+  text-align: left;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 5px solid #ffffff;
 }
