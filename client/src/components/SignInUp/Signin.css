@@ -55,6 +55,10 @@
     color: #555;
 }
 
+.Signin_inputwrap {
+    height: 150px;
+    margin-bottom: -6px;
+}
 .inputField {
     height: 50px;
     padding: 5px;
@@ -107,7 +111,7 @@
 
 .Signininput {
     width: 380px;
-    height: 60%;
+    height: 40px;
     padding: 3px;
     text-align: left;
     border-radius: 5px;

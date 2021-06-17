@@ -89,23 +89,25 @@ export default function SignIn() {
                         }}
                     />
                 </div>
-                <div className="inputField">
-                    <input
-                        type="email"
-                        value={email}
-                        className="Signininput"
-                        placeholder="Email"
-                        onChange={emailHandler}
-                    />
-                </div>
-                <div className="inputField">
-                    <input
-                        type="password"
-                        value={password}
-                        className="Signininput"
-                        placeholder="Password"
-                        onChange={passwordHandler}
-                    />
+                <div className="Signin_inputwrap">
+                    <div className="inputField">
+                        <input
+                            type="email"
+                            value={email}
+                            className="Signininput"
+                            placeholder="Email"
+                            onChange={emailHandler}
+                        />
+                    </div>
+                    <div className="inputField">
+                        <input
+                            type="password"
+                            value={password}
+                            className="Signininput"
+                            placeholder="Password"
+                            onChange={passwordHandler}
+                        />
+                    </div>
                 </div>
                 <div className="SigninBtnwrap">
                     <button className="SigninBtn" onClick={loginHandler}>

@@ -113,7 +113,7 @@ class SignUp extends Component {
                             type="submit"
                             onClick={this.handleSignup}
                         >
-                            회원가입
+                            SIGN UP
                         </button>
                     </div>
                 </div>
