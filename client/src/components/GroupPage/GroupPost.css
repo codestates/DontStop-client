@@ -95,43 +95,6 @@
   font-weight: normal;
 }
 
-.pppost:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  50% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-}
-
-.group_userinfo {
-  width: 50%;
-  height: 50px;
-}
-
-.userimg {
-  width: 40px;
-  margin-top: 5px;
-  margin-left: 5px;
-  position: absolute;
-}
-
-.user_name {
-  width: 150px;
-  margin-left: 50px;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.user_name a {
-  font-weight: normal;
-}
-
 .pppost-title {
   width: 200px;
   height: 50px;

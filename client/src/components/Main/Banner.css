@@ -27,6 +27,7 @@
 }
 
 .banner__content {
+  font-size: 18px;
   color: white;
   white-space: normal;
 }
@@ -121,4 +122,16 @@
   height: 7.5rem;
   width: 100%;
   background-image: white;
+}
+
+@media screen and (max-width: 768px) {
+  .banner__ranking {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner__center {
+    width: 100%;
+  }
 }

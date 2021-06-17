@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Banner.css";
 import { useHistory } from "react-router";
 import axios from "axios";
-import { Saying } from "./Saying";
+// import { Saying } from "./Saying";
 
 function Banner() {
   const history = useHistory();
@@ -18,14 +18,13 @@ function Banner() {
       const response = await axios.get(apiUrl, {
         withCredentials: true,
       });
-      //setRanks(여기서 다시받아야되나?)
       setRanks(response.data);
     }
     fetchData();
   }, [apiUrl]);
 
-  const quoteAPI =
-    Saying.quotes[Math.floor(Math.random() * Saying.quotes.length - 1)];
+  // const quoteAPI =
+  //   Saying.quotes[Math.floor(Math.random() * Saying.quotes.length - 1)];
   // // 로컬이라 cors 에러 --> 배포하고 해봐야됨 아마도?
   // const [quotes, setQuotes] = useState([]);
   // const quoteUrl = `https://api.adviceslip.com/advice`;
@@ -49,7 +48,10 @@ function Banner() {
         <div className="banner__title">
           <h1>Don't Stop!</h1>
           <div className="banner__content">
-            <h5>{Object.values(quoteAPI.quote)}</h5>
+            <h5>
+              "Life isn’t about getting and having, it’s about giving and
+              being."
+            </h5>
           </div>
           <div className="banner__Search">
             <button

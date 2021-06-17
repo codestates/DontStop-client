@@ -58,7 +58,6 @@ const MyPage = (props) => {
       });
     setAccTime(res);
   };
-
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
 
