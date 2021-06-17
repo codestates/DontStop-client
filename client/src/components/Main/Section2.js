@@ -8,7 +8,9 @@ function Section2() {
       <div className="section__main2">
         <div className="section__content2">
           <Fade left>
-            <div className="section__infoImg2" />
+            <video className="section__infoImg" autoPlay loop muted>
+              <source type="video/mp4" src="img/Timer.mp4"></source>
+            </video>
           </Fade>
           <p>공부시간 체크</p>
           <div className="section__info2">
