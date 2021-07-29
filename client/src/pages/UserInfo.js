@@ -11,7 +11,6 @@ const UserInfo = (props) => {
   const token = useSelector(
     (state) => state.userInfoReducer.userInfo.accessToken
   );
-  console.log(token);
   const history = useHistory();
   const [password, setPassword] = useState("");
 
@@ -26,7 +25,6 @@ const UserInfo = (props) => {
         },
       });
       setInfors(res.data);
-      console.log(res);
     }
     fetchData();
   }, []);

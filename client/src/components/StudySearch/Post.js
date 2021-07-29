@@ -44,9 +44,6 @@ function Post({ title, contents, id, count }) {
       <h2 className="post__title">{title}</h2>
       <h5 className="post__contents">{truncate(contents, 80)}</h5>
       <PopupButton joinHandler={joinHandler} />
-      {/* <button className="post__btn" onClick={joinHandler}>
-        스터디 가입하기
-      </button> */}
     </div>
   );
 }

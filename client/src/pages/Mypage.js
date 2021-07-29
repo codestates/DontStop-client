@@ -2,11 +2,9 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Mypage.css";
-import Footer from "../components/Main/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { setUserInfo, toggleLoginStatus } from "../actions";
-import { Saying } from "../components/Main/Saying";
-// import dfsdf
+
 const MyPage = (props) => {
   const dispatch = useDispatch();
   const token = useSelector(
@@ -58,8 +56,7 @@ const MyPage = (props) => {
       });
     setAccTime(res);
   };
-  //ddddddddd
-  // dfsdfsdfsdfsdfsdfsdf
+
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
 
@@ -88,7 +85,6 @@ const MyPage = (props) => {
         {
           headers: {
             "content-type": "application/json",
-            // withCredentials: true,
             Authorization: `Bearer ${token}`,
           },
         }

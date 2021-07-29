@@ -37,7 +37,6 @@ class Modal extends Component {
         }
       )
       .then((res) => {
-        console.log(res.data);
         this.closeModal();
         window.location.replace("/search");
       })
@@ -46,18 +45,15 @@ class Modal extends Component {
       });
   };
 
-  // 스터디 생성시 모달 지우기
   closeModal = () => {
     this.setState(this.props.close);
   };
 
   render() {
-    const { isOpen, close } = this.props; //버튼 props
+    const { isOpen, close } = this.props;
     return (
       <>
         {isOpen ? (
-          // (isOpen === true)면 모달생성
-          //<span className='modal__close' onClick={close}>x</span> x버튼 누르면 꺼짐
           <div className="modal">
             <div className="modal__studySearch">
               <span className="modal__close" onClick={close}>

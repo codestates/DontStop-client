@@ -26,5 +26,5 @@ function Section3() {
     </div>
   );
 }
-//testtest
+
 export default Section3;
