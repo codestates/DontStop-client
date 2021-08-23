@@ -41,7 +41,7 @@ const UserInfo = (props) => {
     event.preventDefault();
 
     if (password !== validatePassword) {
-      return alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
+      return alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요!");
     } else if (
       password.length > 0 &&
       validatePassword.length > 0 &&
