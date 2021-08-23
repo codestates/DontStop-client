@@ -9,16 +9,32 @@
 /* -> classname 중복되면 안된다.  */
 
 .space {
-  height: 100%;
-  grid-row-gap: 5vw;
+  padding: 10em;
   display: grid;
-  grid-template-columns: repeat(3, 15vw);
+  grid-template-columns: repeat(5, 14rem);
+  grid-template-rows: auto;
   justify-content: space-evenly;
-  padding: 10px;
-  margin: 12rem 0;
+  grid-gap: 3.75em;
   flex-wrap: wrap;
 }
-
+@media screen and (max-width: 1440px) {
+  .space {
+    grid-template-columns: repeat(4, 15rem);
+    grid-gap: 3em;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .space {
+    grid-template-columns: repeat(3, 13rem);
+    grid-gap: 3em;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  .space {
+    grid-template-columns: repeat(2, 13rem);
+  }
+}
 .pppost {
   justify-content: center;
   width: 15rem;
