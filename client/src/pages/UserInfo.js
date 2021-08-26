@@ -73,7 +73,7 @@ const UserInfo = (props) => {
       <form onSubmit={handleClickSave}>
         <label className="information2">회원정보</label>
 
-        <label>
+        <label id="userName2">
           이름
           <input
             className="userName2"
@@ -82,7 +82,7 @@ const UserInfo = (props) => {
             readOnly
           ></input>
         </label>
-        <label>
+        <label id="email2">
           이메일
           <input
             className="email2"
@@ -91,7 +91,7 @@ const UserInfo = (props) => {
             readOnly
           ></input>
         </label>
-        <label>
+        <label id="password2">
           비밀번호
           <input
             className="password2"
@@ -99,7 +99,7 @@ const UserInfo = (props) => {
             onChange={handlePassword}
           ></input>
         </label>
-        <label>
+        <label id="checkPassword2">
           비밀번호 확인
           <input
             className="checkPassword2"
